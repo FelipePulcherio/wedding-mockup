@@ -1,6 +1,10 @@
-$color-bg: rgba(245, 245, 245, 1);
-$color-bg-transparent: rgba(245, 245, 245, 0);
-$color-border: rgb(129, 129, 129);
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Michroma&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+
+$color-bg: rgb(221, 199, 180, 1);
+$color-bg-transparent: rgba(221, 199, 180, 0);
+$color-border: rgb(80, 80, 80);
 $max-width: 1100px;
 
 * {
@@ -12,6 +16,7 @@ $max-width: 1100px;
 html {
 	font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 	font-size: 10px;
+  background-color: $color-bg;
 }
 
 @mixin flexBetweenCenter-container {
@@ -29,6 +34,7 @@ a {
 header {
   background-color: $color-bg-transparent;
   position: fixed;
+  top: 0;
   width: 100%;
   box-shadow: inset 0 -0.5rem 1rem -1rem $color-border;
   transition: background-color .3s ease-in;
@@ -40,13 +46,15 @@ header {
     padding: 2.8rem 0;
 
     > a {
-      font-size: 2.5rem;
+      font-family: 'Parisienne', cursive;
+      font-size: 3rem;
     }
 
     > div {
       @include flexBetweenCenter-container;
+      font-family: 'Cutive Mono', monospace;
       gap: 2rem;
-      font-size: 1.7rem;
+      font-size: 1.8rem;
 
       > a {
         @include flexBetweenCenter-container;
@@ -60,6 +68,78 @@ html:not([data-scroll="0"]) header {
 }
 
 main {
-  background-color: $color-border;
-  height: 2000px;
+  width: 100%;
+  overflow-x: hidden;
+
+  .main-photo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    margin: 18rem auto 0 auto;
+    max-width: $max-width;
+    max-height: 540px;
+    font-family: 'Cutive Mono', monospace;
+
+    & > img {
+      grid-column: 1 / 2;
+      width: 100%;
+      max-width: 540px;
+      margin: 0 0 0 auto;
+      object-fit: cover;
+    }
+
+    & > .right-section {
+      grid-column: 2 / 3;
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-columns: 1fr;
+      width: 100%;
+      letter-spacing: .5rem;
+      white-space: nowrap;
+
+      .first {
+        grid-row: 1 / 2;
+        place-self: start stretch;
+        @include flexBetweenCenter-container;
+        gap: 1rem;
+
+        /*TO DO: Add responsiveness to font-size*/
+        margin: 1rem 0 0 clamp(1rem, 1.5rem + 1vw, 3rem);
+        font-size: 1.5rem;
+
+        & > .line {
+          border-bottom: solid 1.5px #000000;
+          flex: 1 0 1000px;
+        }
+      }
+
+      .second {
+        grid-row: 2 / 3;
+        place-self: center stretch;
+        font-family: 'Parisienne', cursive;
+        font-weight: 500;
+        letter-spacing: normal;
+
+        /*TO DO: Add responsiveness to font-size*/
+        font-size: 6rem;
+        padding-left: clamp(1rem, 1.5rem + 1vw, 3rem);
+      }
+
+      .third {
+        grid-row: 3 / 4;
+        place-self: end stretch;
+        @include flexBetweenCenter-container;
+        gap: 1rem;
+
+        /*TO DO: Add responsiveness to font-size*/
+        margin: 0 0 1rem .1rem;
+        font-size: 1.5rem;
+
+        & > .line {
+          border-bottom: solid 1.5px #000000;
+          flex: 1;
+        }
+      }
+    }
+  }
 }
