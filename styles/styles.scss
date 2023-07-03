@@ -1,6 +1,7 @@
 $color-bg: rgba(237, 237, 237, 1);
 $color-bg-transparent: rgba(237, 237, 237, 0);
 $color-border: rgb(129, 129, 129);
+$max-width: 1100px;
 
 * {
   margin: 0;
@@ -33,7 +34,7 @@ header {
 
   .header {
     @include flexBetweenCenter-container;
-    max-width: 1100px;
+    max-width: $max-width;
     margin: 0 auto;
     padding: 2.8rem 0;
 
