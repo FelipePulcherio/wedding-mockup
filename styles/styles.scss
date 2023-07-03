@@ -5,10 +5,42 @@
 * {
   margin: 0;
   padding: 0;
-  border: solid black 1px;
+  /*border: solid black 1px;*/
 }
 
 html {
 	font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 	font-size: 10px;
+}
+
+@mixin flexBetweenCenter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.header {
+  @include flexBetweenCenter-container;
+  max-width: 85vw;
+  margin: 0 auto;
+  padding: 2rem 0;
+
+  > a {
+    font-size: 2.5rem;
+  }
+
+  > div {
+    @include flexBetweenCenter-container;
+    gap: 2rem;
+    font-size: 1.7rem;
+
+    > a {
+      @include flexBetweenCenter-container;
+    }
+  }
 }
