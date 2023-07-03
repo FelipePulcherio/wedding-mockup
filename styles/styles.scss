@@ -102,10 +102,8 @@ main {
         place-self: start stretch;
         @include flexBetweenCenter-container;
         gap: 1rem;
-
-        /*TO DO: Add responsiveness to font-size*/
-        margin: 1rem 0 0 clamp(1rem, 1.5rem + 1vw, 3rem);
-        font-size: 1.5rem;
+        margin: 1rem 0 0 clamp(1rem, 1.5rem + 2vw, 4rem);
+        font-size: clamp(1.2rem, 1rem + .4vw, 1.5rem);
 
         & > .line {
           border-bottom: solid 1.5px #000000;
@@ -119,10 +117,8 @@ main {
         font-family: 'Parisienne', cursive;
         font-weight: 500;
         letter-spacing: normal;
-
-        /*TO DO: Add responsiveness to font-size*/
-        font-size: 6rem;
-        padding-left: clamp(1rem, 1.5rem + 1vw, 3rem);
+        font-size: clamp(1.6rem, 1.6rem + 3vw, 6rem);
+        padding-left: clamp(1rem, 1.5rem + 2vw, 4rem);
       }
 
       .third {
@@ -130,10 +126,8 @@ main {
         place-self: end stretch;
         @include flexBetweenCenter-container;
         gap: 1rem;
-
-        /*TO DO: Add responsiveness to font-size*/
         margin: 0 0 1rem .1rem;
-        font-size: 1.5rem;
+        font-size: clamp(1.2rem, 1rem + .4vw, 1.5rem);
 
         & > .line {
           border-bottom: solid 1.5px #000000;
