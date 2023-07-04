@@ -63,6 +63,7 @@ header {
       }
 
       & > a.clicked, a:hover {
+        cursor: pointer;
         border-bottom: solid .25rem $color-highlight;
         border-radius: 5%;
       }
