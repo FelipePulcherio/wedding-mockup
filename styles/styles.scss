@@ -5,6 +5,7 @@
 $color-bg: rgb(221, 199, 180, 1);
 $color-bg-transparent: rgba(221, 199, 180, 0);
 $color-border: rgb(80, 80, 80);
+$color-highlight: rgb(56, 34, 15, 0.5);
 $max-width: 1100px;
 
 * {
@@ -45,19 +46,25 @@ header {
     margin: 0 auto;
     padding: 2.8rem 0;
 
-    > a {
+    & > a {
       font-family: 'Parisienne', cursive;
       font-size: 3rem;
     }
 
-    > div {
+    & > div {
       @include flexBetweenCenter-container;
       font-family: 'Cutive Mono', monospace;
-      gap: 2rem;
-      font-size: clamp(1.5rem, 1.5rem + .4vw, 1.8rem);;
+      gap: 2.5rem;
+      font-size: clamp(1.5rem, 1.5rem + .4vw, 1.8rem);
+      
+      & > a {
+        border-bottom: solid .25rem $color-bg-transparent;
+        transition: border-bottom .25s linear;
+      }
 
-      > a {
-        @include flexBetweenCenter-container;
+      & > a.clicked, a:hover {
+        border-bottom: solid .25rem $color-highlight;
+        border-radius: 5%;
       }
     }
   }
