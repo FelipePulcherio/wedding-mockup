@@ -54,7 +54,7 @@ header {
       @include flexBetweenCenter-container;
       font-family: 'Cutive Mono', monospace;
       gap: 2rem;
-      font-size: 1.8rem;
+      font-size: clamp(1.5rem, 1.5rem + .4vw, 1.8rem);;
 
       > a {
         @include flexBetweenCenter-container;
