@@ -68,6 +68,10 @@ header {
         border-bottom: solid .25rem $color-highlight;
         border-radius: 5%;
       }
+
+      & > img {
+        display: none;
+      }
     }
   }
 }
@@ -152,4 +156,14 @@ main {
   .first > .text, .third > .text {
     display: none;
   }
+}
+
+@media (max-width:320px) {
+  .dropdown > a {
+    display: none;
+  }
+
+  .dropdown > .mobile {
+    display: block;
+  }  
 }
