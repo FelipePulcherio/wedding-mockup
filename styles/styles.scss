@@ -158,12 +158,28 @@ main {
   }
 }
 
-@media (max-width:320px) {
-  .dropdown > a {
-    display: none;
+@media (max-width:499px) {
+  .dropdown {
+    a {
+      display: none;
+    }
+
+    .mobile {
+      display: block;
+    }
   }
 
-  .dropdown > .mobile {
-    display: block;
-  }  
+  .second {
+    span {
+      display: none;
+    }
+
+    &:after {
+      content: 'N + V';
+    }
+
+    & > p:last-child {
+      display: none;
+    }
+  }
 }
