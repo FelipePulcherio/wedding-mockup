@@ -145,3 +145,9 @@ main {
     }
   }
 }
+
+@media (max-width: 500px) {
+  .first > .text, .third > .text {
+    display: none;
+  }
+}
