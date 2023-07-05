@@ -44,11 +44,11 @@ header {
     @include flexBetweenCenter-container;
     max-width: $max-width;
     margin: 0 auto;
-    padding: 2.8rem 0;
+    padding: 2.8rem 1rem;
 
     & > a {
       font-family: 'Parisienne', cursive;
-      font-size: 3rem;
+      font-size: clamp(1.5rem, 1.5rem + 2vw, 3rem);;
     }
 
     & > div {
@@ -58,6 +58,7 @@ header {
       font-size: clamp(1.5rem, 1.5rem + .4vw, 1.8rem);
       
       & > a {
+        font-size: clamp(1.2rem, 1rem + .5vw, 1.7rem);
         border-bottom: solid .25rem $color-bg-transparent;
         transition: border-bottom .25s linear;
       }
@@ -84,6 +85,7 @@ main {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
     margin: 18rem auto 0 auto;
+    padding: 0 1rem;
     max-width: $max-width;
     max-height: 540px;
     font-family: 'Cutive Mono', monospace;
@@ -99,7 +101,7 @@ main {
     & > .right-section {
       grid-column: 2 / 3;
       display: grid;
-      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-rows: .5fr 2fr .5fr;
       grid-template-columns: 1fr;
       width: 100%;
       letter-spacing: .5rem;
@@ -125,7 +127,7 @@ main {
         font-family: 'Parisienne', cursive;
         font-weight: 500;
         letter-spacing: normal;
-        font-size: clamp(1rem, 1rem + 3.5vw, 6rem);
+        font-size: clamp(1.5rem, 1.8rem + 3.5vw, 6rem);
         padding-left: clamp(1rem, 1.5rem + 2vw, 4rem);
       }
 
