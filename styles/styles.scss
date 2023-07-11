@@ -169,17 +169,8 @@ main {
     }
   }
 
-  .second {
-    span {
-      display: none;
-    }
-
-    &:after {
-      content: 'N + V';
-    }
-
-    & > p:last-child {
-      display: none;
-    }
+  #second {
+    padding-left: 0;
+    margin: auto;
   }
 }
