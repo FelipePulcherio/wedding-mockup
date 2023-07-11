@@ -153,12 +153,29 @@ main {
 }
 
 @media (max-width: 500px) {
+  header {
+    .header {
+      padding: 2rem 1.5rem;
+    }
+  }
+
+  main > .main-photo {
+    margin-top: 10rem;
+    padding: 0 1.5rem;
+  }
+
   .first > .text, .third > .text {
     display: none;
   }
 }
 
 @media (max-width:499px) {
+  header {
+    .header {
+      padding: 1.2rem 1.5rem;
+    }
+  }
+
   .dropdown {
     a {
       display: none;
@@ -167,6 +184,11 @@ main {
     .mobile {
       display: block;
     }
+  }
+
+  main > .main-photo {
+    margin-top: 8rem;
+    padding: 0 1.5rem;
   }
 
   #second {
