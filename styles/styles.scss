@@ -6,6 +6,7 @@ $color-bg: rgb(221, 199, 180, 1);
 $color-bg-transparent: rgba(221, 199, 180, 0);
 $color-border: rgb(80, 80, 80);
 $color-highlight: rgb(56, 34, 15, 0.5);
+$color-clock: rgb(190, 168, 149);
 $max-width: 1100px;
 
 * {
@@ -48,7 +49,7 @@ header {
 
     & > a {
       font-family: 'Parisienne', cursive;
-      font-size: clamp(1.5rem, 1.5rem + 2vw, 3rem);;
+      font-size: clamp(1.5rem, 1.5rem + 2vw, 3rem);
     }
 
     & > div {
@@ -83,6 +84,7 @@ html:not([data-scroll="0"]) header {
 main {
   width: 100%;
   overflow-x: hidden;
+  font-family: 'Cutive Mono', monospace;
 
   .main-photo {
     display: grid;
@@ -92,7 +94,6 @@ main {
     padding: 0 1rem;
     max-width: $max-width;
     max-height: 540px;
-    font-family: 'Cutive Mono', monospace;
 
     & > img {
       grid-column: 1 / 2;
@@ -150,6 +151,51 @@ main {
       }
     }
   }
+
+  .countdown {
+    @include flexBetweenCenter-container;
+    flex-direction: column;
+    margin: 0 auto;
+    width: clamp(20rem, 20rem + 20vw, 60rem);
+    padding: 8rem 0;
+    font-size: clamp(1.2rem, 1rem + .5vw, 1.7rem);
+
+    .text {
+      padding: 2.5rem 0;
+    }
+
+    .clock {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+
+      .days, .hours, .minutes, .seconds {
+        place-self: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
+        width: 100%;
+
+        & > div:first-child {
+          height: calc(clamp(1.7rem, 1.7rem + .5vw, 2.5rem)*2);
+          width: 100%;
+          font-size: clamp(1.7rem, 1.7rem + .5vw, 2.5rem);
+          border-radius: 5%;
+          background-color: $color-clock;
+
+          & > span {
+            height: inherit;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 500px) {
@@ -159,9 +205,21 @@ main {
     }
   }
 
-  main > .main-photo {
-    margin-top: 10rem;
-    padding: 0 1.5rem;
+  main {
+    .main-photo {
+      margin-top: 10rem;
+      padding: 0 1.5rem;
+    }
+
+    .countdown {
+      width: 20rem;
+      padding: 3rem 0;
+
+      .clock {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+      }
+    }
   }
 
   .first > .text, .third > .text {
