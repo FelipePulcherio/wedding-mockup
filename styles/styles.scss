@@ -196,6 +196,56 @@ main {
       }
     }
   }
+
+  .brief {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 1.5rem 8rem 1.5rem;
+    gap: 2rem;
+
+    .title {
+      font-size: clamp(2rem, 2rem + 1.5vw, 3.8rem);
+    }
+
+    .subtitle {
+      font-size: clamp(1.2rem, 1.2rem + .7vw, 2rem);
+    }
+
+    p {
+      font-size: clamp(1.2rem, 1rem + .5vw, 1.7rem);
+    }
+
+    .image {
+      font-family: 'Parisienne', cursive;
+      font-weight: bold;
+      font-size: 6rem;
+      width: 10rem;
+      height: 10rem;
+
+      .first {
+        @include flexBetweenCenter-container;
+        justify-content: center;
+        position: relative;
+        width: 5rem;
+        height: 5rem;
+        top: 10%;
+        left: 2%;
+      }
+
+      .second {
+        @include flexBetweenCenter-container;
+        justify-content: center;
+        position: relative;
+        width: 5rem;
+        height: 5rem;
+        left: 44%;
+        top: 5%;
+      }
+    }
+  }
 }
 
 @media (max-width: 500px) {
