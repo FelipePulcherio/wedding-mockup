@@ -9,4 +9,21 @@ function menuClick() {
 const buttons = document.querySelectorAll('a.title');
 buttons.forEach( (button) => button.addEventListener('click', menuClick));
 
-// Carousel sections
+// SplideJS section
+/*import Splide from '@splidejs/splide';
+import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';*/
+
+const Splide = window.Splide;
+
+const splide = new Splide('.splide', {
+  type   : 'loop',
+  drag   : 'free',
+  focus  : 'center',
+  perPage: 3,
+  autoScroll: {
+    speed: 0.4,
+  },
+} );
+
+splide.mount(window.splide.Extensions);
+
