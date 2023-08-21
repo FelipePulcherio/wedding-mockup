@@ -1,3 +1,4 @@
+// Header section
 function menuClick() {
   const menuButtons = document.querySelectorAll('a.title');
   menuButtons.forEach((button) => button.classList.remove('clicked'));
@@ -7,3 +8,5 @@ function menuClick() {
 
 const buttons = document.querySelectorAll('a.title');
 buttons.forEach( (button) => button.addEventListener('click', menuClick));
+
+// Carousel section
