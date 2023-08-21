@@ -249,7 +249,7 @@ main {
 }
 
 .splide {
-  padding: 0 0 8rem 0;
+  padding: 4rem 0 8rem 0;
   .splide__slider {
 
     .splide__track {
@@ -264,6 +264,28 @@ main {
     .splide__pagination {
       padding-bottom: 8rem;
     }
+  }
+}
+
+footer {
+  font-family: 'Cutive Mono', monospace;
+  @include flexBetweenCenter-container;
+  padding: 3rem 1.5rem 3rem 1.5rem;
+  box-shadow: inset 0 0.5rem 1rem -1rem $color-border;
+  
+  .social, .social > a, .counter, .personal {
+    @include flexBetweenCenter-container;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .counter {
+    gap: 0;
+    font-size: clamp(1.2rem, 1rem + .5vw, 1.7rem);
+  }
+
+  .personal {
+    font-size: clamp(1.2rem, 1.2rem + .7vw, 2rem);
   }
 }
 
