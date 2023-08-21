@@ -248,6 +248,25 @@ main {
   }
 }
 
+.splide {
+  padding: 0 0 8rem 0;
+  .splide__slider {
+
+    .splide__track {
+      .splide__list {
+        img {
+          width: 200px;
+          height: 300px;
+        }
+      }
+    }
+
+    .splide__pagination {
+      padding-bottom: 8rem;
+    }
+  }
+}
+
 @media (max-width: 500px) {
   header {
     .header {
