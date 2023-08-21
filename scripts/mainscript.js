@@ -9,4 +9,4 @@ function menuClick() {
 const buttons = document.querySelectorAll('a.title');
 buttons.forEach( (button) => button.addEventListener('click', menuClick));
 
-// Carousel section
+// Carousel sections
