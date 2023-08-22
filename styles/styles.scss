@@ -256,8 +256,7 @@ main {
     .splide__track {
       .splide__list {
         img {
-          width: 200px;
-          height: 300px;
+          width: 25vw;
         }
       }
     }
@@ -292,7 +291,7 @@ footer {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 1000px) {
   header {
     .header {
       padding: 2rem 1.5rem;
