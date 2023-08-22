@@ -291,16 +291,26 @@ footer {
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width:500px) {
   header {
     .header {
-      padding: 2rem 1.5rem;
+      padding: 1.2rem 1.5rem;
+    }
+  }
+
+  .dropdown {
+    a {
+      display: none;
+    }
+
+    .mobile {
+      display: block;
     }
   }
 
   main {
     .main-photo {
-      margin-top: 10rem;
+      margin-top: 8rem;
       padding: 0 1.5rem;
     }
 
@@ -318,32 +328,36 @@ footer {
   .first > .text, .third > .text {
     display: none;
   }
+
+  div.brief, section.splide, footer {
+    padding: 3rem 1.5rem;
+  }
+
+  section.splide {
+    padding-bottom: 6rem;
+  }
+
+  #splide_img {
+    width: 40vw;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 2rem;
+  }
 }
 
-@media (max-width:499px) {
+@media (max-width: 1000px) {
   header {
     .header {
-      padding: 1.2rem 1.5rem;
+      padding: 2rem 1.5rem;
     }
   }
 
-  .dropdown {
-    a {
-      display: none;
+  main {
+    .main-photo {
+      margin-top: 10rem;
+      padding: 0 1.5rem;
     }
-
-    .mobile {
-      display: block;
-    }
-  }
-
-  main > .main-photo {
-    margin-top: 8rem;
-    padding: 0 1.5rem;
-  }
-
-  #second {
-    padding-left: 0;
-    margin: auto;
   }
 }
