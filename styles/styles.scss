@@ -216,6 +216,7 @@ main {
     }
 
     p {
+      max-width: $max-width;
       font-size: clamp(1.2rem, 1rem + .5vw, 1.7rem);
     }
 
@@ -256,7 +257,7 @@ main {
     .splide__track {
       .splide__list {
         img {
-          width: 25vw;
+          width: 20vw;
         }
       }
     }
