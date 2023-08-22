@@ -301,7 +301,7 @@ footer {
   text-align: center;
   max-width: $max-width;
   margin: 18rem auto 0 auto;
-  padding: 0rem 1.5rem 8rem 1.5rem;
+  padding: 0rem 1.5rem 4rem 1.5rem;
   gap: 3rem;
 
   .title {
@@ -337,6 +337,36 @@ footer {
       height: 5rem;
       left: 44%;
       top: 5%;
+    }
+  }
+}
+
+.place_directions {
+  background-color: $color-clock;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 4rem 3rem 4rem 3rem;
+
+  .first {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
+
+    .place_img {
+      width: 35rem;
+    }
+
+    .text {
+      .address{
+        font-size: clamp(1.2rem, 1.2rem + .7vw, 2rem);
+        font-weight: bold;
+        padding-top: 1rem;
+      }
+      .date {
+        font-size: clamp(1.2rem, 1rem + .5vw, 1.7rem);
+        padding-top: 2rem;
+      }
     }
   }
 }
