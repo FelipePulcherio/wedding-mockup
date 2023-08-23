@@ -48,12 +48,19 @@
         </div>
       </div>
       <div class="second">
-        <a href="" target="_blank"><img class="gmaps" src=""></a>
+        <a href="https://www.google.com/maps/place/49%C2%B012'54.7%22N+122%C2%B054'25.0%22W/@49.2151944,-122.9069444,17" target="_blank" rel="noopener"><img class="gmaps" src="../images/map_location.png"></a>
       </div>
-      <div class="third">
+      <form class="third">
         <div>PLEASE ENTER THE STARTING ADDRESS HERE TO CALCULATE A ROUTE:</div>
-        
-      </div>
+        <section class="route_calc">
+          <label for="route"></label>
+          <input type="text" id="route" name="route" placeholder=" " pattern="^[A-Za-z]{1,20}$">
+          <div class="error">* Please use only letters</div>
+        </section>
+        <div>
+          <button type="submit">PLOT A ROUTE</button>
+        </div>
+      </form>
     </div>
   </main>
 
