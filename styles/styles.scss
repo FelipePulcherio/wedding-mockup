@@ -7,6 +7,7 @@ $color-bg-transparent: rgba(221, 199, 180, 0);
 $color-border: rgb(80, 80, 80);
 $color-highlight: rgb(56, 34, 15, 0.5);
 $color-clock: rgb(190, 168, 149);
+$color-place: rgb(225, 205, 189);
 $max-width: 1100px;
 
 * {
@@ -342,7 +343,7 @@ footer {
 }
 
 .place_directions {
-  background-color: $color-clock;
+  background-color: $color-place;
   max-width: $max-width;
   margin: 0 auto;
   padding: 4rem 3rem 4rem 3rem;
@@ -352,9 +353,10 @@ footer {
     justify-content: flex-start;
     align-items: flex-start;
     gap: 2rem;
+    padding-bottom: 4rem;
 
     .place_img {
-      width: 35rem;
+      width: min(35rem, 100%);
     }
 
     .text {
@@ -367,6 +369,86 @@ footer {
         font-size: clamp(1.2rem, 1rem + .5vw, 1.7rem);
         padding-top: 2rem;
       }
+    }
+  }
+
+  .second {
+    padding-bottom: 4rem;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .third {
+    div {
+      font-size: clamp(1.2rem, 1.2rem + .7vw, 2rem);
+      text-align: center;
+    }
+    
+    section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      input[type='text'] {
+        font-family: 'Cutive Mono', monospace;
+        font-size: clamp(1.2rem, 1.2rem + .7vw, 2rem);
+        background-color: $color-place;
+        width: 50%;
+        height: 3rem;
+        margin: 2rem 0 .5rem 0;
+        padding-left: 1rem;
+        border: 1.5px solid $color-highlight;
+
+        &:focus, &:hover {
+          border: 1.5px solid rgb(0,0,0);
+          outline: none;
+        }
+
+        &:not(:focus):not(:placeholder-shown):valid {
+          // Not focused, not empty, valid value
+          border: 1.5px solid $color-highlight;
+        }
+
+        &:not(:focus):not(:placeholder-shown):invalid {
+          // Not focused, not empty, invalid value
+          border: 1.5px solid rgb(255, 0, 0);
+      
+          & ~ .error {
+            opacity: 1;
+          }
+        }
+      }
+
+      .error {
+        display: block;
+        text-align: left;
+        overflow: visible;
+        color: rgb(255, 0, 0);
+        width: 50%;
+        padding-bottom: .5rem;
+        opacity: 0;
+      }
+    }
+
+    div > button {
+      font-family: 'Cutive Mono', monospace;
+      font-size: clamp(1.2rem, 1.2rem + .7vw, 2rem);
+      padding: .8rem 1rem;
+      font-weight: bold;
+      color: rgb(255, 255, 255);
+      background-color: $color-highlight;
+      border: none;
+      border-radius: .2rem;
+      box-shadow: 0 0rem .6rem $color-highlight;
+
+      &:hover {
+        transition: all .15s ease-in-out;
+        transform: scale(0.95);
+      }
+
     }
   }
 }
