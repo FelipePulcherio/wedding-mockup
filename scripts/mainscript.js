@@ -21,6 +21,11 @@ if (document.URL.includes('index')) {
     drag   : 'free',
     focus  : 'center',
     perPage: 3,
+    breakpoints: {
+      500: {
+        perPage: 2,
+      },
+    },
     autoScroll: {
       speed: 0.4,
     },
