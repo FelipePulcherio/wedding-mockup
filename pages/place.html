@@ -5,12 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/styles/styles.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
   <link rel="shortcut icon" type="image/x-icon" href="">
   <script src="/scripts/mainscript.js" defer></script>
   <script src="/scripts/fadeheader.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
   <title>Nathan & Victoria</title>
 </head>
 
@@ -54,11 +51,11 @@
         <div>PLEASE ENTER THE STARTING ADDRESS HERE TO CALCULATE A ROUTE:</div>
         <section class="route_calc">
           <label for="route"></label>
-          <input type="text" id="route" name="route" placeholder=" " pattern="^[A-Za-z]{1,20}$">
-          <div class="error">* Please use only letters</div>
+          <input type="text" id="route" name="route" placeholder=" " required="required" pattern=".+">
+          <div class="error">*Please type something.</div>
         </section>
         <div>
-          <button type="submit">PLOT A ROUTE</button>
+          <button type="button" id="placeButton">PLOT A ROUTE</button>
         </div>
       </form>
     </div>
