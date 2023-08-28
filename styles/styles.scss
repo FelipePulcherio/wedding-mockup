@@ -504,6 +504,28 @@ footer {
     width: 40vw;
   }
 
+  .place_message {
+    margin-top: 10rem;
+  }
+
+  .place_directions {
+    .first {
+      .place_img {
+        display: none;
+      }
+
+      .text {
+        display: block;
+      }
+    }
+
+    .third section {
+      input[type='text'], div.error {
+        width: 80%;
+      }
+    }
+  }
+
   footer {
     flex-direction: column;
     gap: 2rem;
