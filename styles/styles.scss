@@ -443,6 +443,7 @@ footer {
       border: none;
       border-radius: .2rem;
       box-shadow: 0 0rem .6rem $color-highlight;
+      cursor: pointer;
 
       &:hover {
         transition: all .15s ease-in-out;
@@ -510,6 +511,7 @@ footer {
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-template-rows: repeat(auto-fit, minmax(3rem, 1fr));
+  gap: 0 1.5rem;
   border: solid 1px $color-highlight;
   border-bottom: none;
   border-radius: .3rem;
@@ -523,7 +525,7 @@ footer {
     .sort-wrapper {
       @include flexBetweenCenter-container;
       gap: 3rem;
-      margin-top: 1.5rem;
+      margin: 1.5rem 0;
       border: solid 1px $color-highlight;
       border-radius: .3rem;
 
@@ -594,15 +596,77 @@ footer {
   }
 
   .items {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem 1.5rem;
 
     .card {
-      background-color: aqua;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0rem .2rem $color-highlight;
+      background-color: $color-place;
+      gap: 1rem;
+      padding: 1rem;
       flex: 1 1 0;
+
+      img {
+        width: 80%;
+      }
+
+      .card-title {
+        font-size: clamp(1rem, 1rem + .5vw, 1.5rem);
+      }
+
+      .card-price {
+        font-size: clamp(1rem, 1rem + .5vw, 1.5rem);
+        font-weight: bold;
+      }
+
+      button {
+        font-family: 'Cutive Mono', monospace;
+        font-size: clamp(1.2rem, 1.2rem + .7vw, 2rem);
+        padding: .4rem 1rem;
+        font-weight: bold;
+        color: rgb(255, 255, 255);
+        background-color: $color-highlight;
+        border: none;
+        border-radius: .2rem;
+        box-shadow: 0 0rem .3rem $color-highlight;
+        cursor: pointer;
+
+        &:hover {
+          transition: all .15s ease-in-out;
+          transform: scale(0.95);
+        }
+      }
+      
+      &.purchased {
+        filter: grayscale(70%);
+        cursor: not-allowed;
+
+        button {
+          cursor: not-allowed;
+          visibility: hidden;
+
+          &:after {
+            content: 'SOLD OUT!';
+            visibility: visible;
+            display: block;
+            margin-top: -2rem;
+            background-color: $color-highlight;
+            padding: .4rem 1rem;
+            border: none;
+            border-radius: .2rem;
+            box-shadow: 0 0rem .3rem $color-highlight;
+          }
+
+          &:hover {
+            transform: scale(1);
+          }
+        }
+      }
 
       &.hidden {
         display: none;
