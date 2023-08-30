@@ -508,7 +508,7 @@ footer {
   margin: 0 auto;
   padding: 0rem 1.5rem 4rem 1.5rem;
   display: grid;
-  grid-template-columns: 1.5fr 4fr;
+  grid-template-columns: 1fr 4fr;
   grid-template-rows: repeat(auto-fit, minmax(3rem, 1fr));
   border: solid 1px $color-highlight;
   border-bottom: none;
@@ -590,11 +590,25 @@ footer {
           }
         }
       }
-
     }
-
   }
 
+  .items {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem 1rem;
+
+    .card {
+      background-color: aqua;
+      flex: 1 1 0;
+
+      &.hidden {
+        display: none;
+      }
+    }
+  }
 }
 
 /* ----- MOBILE STYLING ----- */
