@@ -554,6 +554,47 @@ footer {
       }
     }
   }
+
+  .filter {
+    grid-column: 1 / 2;
+    grid-row: 2 / 2;
+    font-size: clamp(1.2rem, 1rem + .5vw, 1.7rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2rem;
+
+    div {
+      .title {
+        font-weight: bold;
+        padding-bottom: 1rem;
+      }
+
+      ol {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+
+        li {
+          list-style-type: none;
+
+          label {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: .5rem;
+
+            input[type="checkbox"] {
+
+            }
+          }
+        }
+      }
+
+    }
+
+  }
+
 }
 
 /* ----- MOBILE STYLING ----- */
