@@ -502,6 +502,60 @@ footer {
   }
 }
 
+.registry_items {
+  font-family: 'Cutive Mono', monospace;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0rem 1.5rem 4rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1.5fr 4fr;
+  grid-template-rows: repeat(auto-fit, minmax(3rem, 1fr));
+  border: solid 1px $color-highlight;
+  border-bottom: none;
+  border-radius: .3rem;
+
+  .sort {
+    grid-column: 1 / -1;
+    grid-row: 1 / 1;
+    @include flexBetweenCenter-container;
+    justify-content: flex-end;
+
+    .sort-wrapper {
+      @include flexBetweenCenter-container;
+      gap: 3rem;
+      margin-top: 1.5rem;
+      border: solid 1px $color-highlight;
+      border-radius: .3rem;
+
+      .sort-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-left: .7rem;
+        
+        .sort-title {
+          font-size: clamp(1rem, 1rem + .5vw, 1.5rem);
+        }
+  
+        .sort-selection {
+          font-size: clamp(1.2rem, 1rem + .7vw, 1.8rem);
+          font-weight: bold;
+        }
+      }
+
+      .sort-img {
+        margin-right: 1rem;
+        transition: transform .5s ease-in-out;
+
+        &.clicked {
+          
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
+
 /* ----- MOBILE STYLING ----- */
 @media (max-width:500px) {
   header {
