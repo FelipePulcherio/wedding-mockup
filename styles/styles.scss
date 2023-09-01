@@ -506,21 +506,20 @@ footer {
 .registry_items {
   font-family: 'Cutive Mono', monospace;
   max-width: $max-width;
-  margin: 0 auto;
-  padding: 0rem 1.5rem 4rem 1.5rem;
+  margin: 0 auto 4rem auto;
+  padding: 0rem 1.5rem 1.5rem 1.5rem;
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-template-rows: repeat(auto-fit, minmax(3rem, 1fr));
   gap: 0 1.5rem;
   border: solid 1px $color-highlight;
-  border-bottom: none;
   border-radius: .3rem;
 
   .sort {
     grid-column: 1 / -1;
     grid-row: 1 / 1;
-    @include flexBetweenCenter-container;
-    justify-content: flex-end;
+    margin: 0 0 0 auto;
+    position: relative;
 
     .sort-wrapper {
       @include flexBetweenCenter-container;
@@ -537,10 +536,12 @@ footer {
         
         .sort-title {
           font-size: clamp(1rem, 1rem + .5vw, 1.5rem);
+          line-height: calc(clamp(1rem, 1rem + .5vw, 1.5rem)*1.2);
         }
   
         .sort-selection {
           font-size: clamp(1.2rem, 1rem + .7vw, 1.8rem);
+          line-height: calc(clamp(1.2rem, 1rem + .7vw, 1.8rem)*1.2);
           font-weight: bold;
         }
       }
@@ -552,6 +553,29 @@ footer {
         &.clicked {
           
           transform: rotate(180deg);
+        }
+      }
+    }
+
+    .sort-dropdown {
+      list-style: none;
+      font-size: clamp(1rem, 1rem + .5vw, 1.5rem);
+      width: 99.5%;
+      background-color: $color-bg;
+      border: solid 1px $color-highlight;
+      border-top: solid 1px rgb(0, 0, 0);
+      border-radius: .3rem;
+      position: absolute;
+      top: calc(calc(clamp(1rem, 1rem + .5vw, 1.5rem)*1.2) + calc(clamp(1.2rem, 1rem + .7vw, 1.8rem)*1.2) + 1.5rem);
+      display: none;
+
+      li {
+        padding: .7rem;
+
+        &:hover, &.selected {
+          cursor: pointer;
+          color: white;
+          background-color: $color-highlight;
         }
       }
     }
