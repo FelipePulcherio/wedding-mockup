@@ -57,3 +57,43 @@ if (document.URL.includes('place')) {
   let placeButton = document.getElementById("placeButton");
   placeButton.addEventListener("click", routeButton);
 }
+
+// Registry.html section
+if (document.URL.includes('registry')) { 
+
+  function dropMenuClick() {
+    this.classList.toggle('clicked');
+    const dropMenu = document.querySelector('.sort-dropdown');
+    dropMenu.classList.toggle('clicked');
+
+    const dropDownExit = document.querySelector('.sort-exit');
+    dropDownExit.style.visibility = "visible";
+    dropDownExit.addEventListener('click', dropMenuExit);
+  }
+
+  function dropMenuExit(a, b, c) {
+    const dropButton = document.querySelector('.sort-img');
+    dropButton.classList.remove('clicked');
+
+    const dropMenu = document.querySelector('.sort-dropdown');
+    dropMenu.classList.remove('clicked');
+
+    this.style.visibility = "hidden";
+  }
+
+  const dropButton = document.querySelector('.sort-img');
+  dropButton.addEventListener('click', dropMenuClick);
+
+  function dropMenuSelect() {
+    const dropMenuButtons = document.querySelectorAll('.sort-dropdown > li');
+    dropMenuButtons.forEach( (button) => button.classList.remove('selected'));
+
+    this.classList.add('selected');
+
+    const sortValue = document.querySelector('.sort-selection');
+    sortValue.innerHTML = this.innerHTML;
+  }
+
+  const dropMenuButtons = document.querySelectorAll('.sort-dropdown > li');
+  dropMenuButtons.forEach( (button) => button.addEventListener('click', dropMenuSelect));
+}
