@@ -567,6 +567,7 @@ footer {
       border-radius: .3rem;
       position: absolute;
       top: calc(calc(clamp(1rem, 1rem + .5vw, 1.5rem)*1.2) + calc(clamp(1.2rem, 1rem + .7vw, 1.8rem)*1.2) + 1.5rem);
+      z-index: 4;
       visibility: hidden;
       opacity: 0;
       transition: visibility 0s, opacity .2s linear;
@@ -585,6 +586,19 @@ footer {
           background-color: $color-highlight;
         }
       }
+    }
+
+    .sort-exit {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: rgba(0,0,0,0);
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+      visibility: hidden;
     }
   }
 
