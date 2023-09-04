@@ -548,7 +548,7 @@ footer {
 
       .sort-img {
         margin-right: 1rem;
-        transition: transform .5s ease-in-out;
+        transition: transform .2s linear;
 
         &.clicked {
           
@@ -567,7 +567,14 @@ footer {
       border-radius: .3rem;
       position: absolute;
       top: calc(calc(clamp(1rem, 1rem + .5vw, 1.5rem)*1.2) + calc(clamp(1.2rem, 1rem + .7vw, 1.8rem)*1.2) + 1.5rem);
-      display: none;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s, opacity .2s linear;
+
+      &.clicked {
+        visibility: visible;
+        opacity: 1;
+      }
 
       li {
         padding: .7rem;
