@@ -60,7 +60,8 @@ if (document.URL.includes('place')) {
 
 // Registry.html section
 if (document.URL.includes('registry')) { 
-
+  //Dropdown menu (open-close)
+  //https://stackoverflow.com/questions/5066925/javascript-only-sort-a-bunch-of-divs
   function dropMenuClick() {
     this.classList.toggle('clicked');
     const dropMenu = document.querySelector('.sort-dropdown');
@@ -84,16 +85,97 @@ if (document.URL.includes('registry')) {
   const dropButton = document.querySelector('.sort-img');
   dropButton.addEventListener('click', dropMenuClick);
 
+
+  //Dropdown menu (selection)
+  function dropMenuSorting(oldSortValue, newSortValue) {
+
+    //Identify which button was pressed. Was it the same?
+    if (oldSortValue !== newSortValue) {         
+      //Get nodeList of items to sort
+      let toSort = document.getElementById('items').children;
+      let toSortArray = Array.from(toSort);
+
+      //Remove actual DOM tree
+      document.getElementById('items').replaceChildren();
+
+      switch (newSortValue) {
+        case "Featured":
+          //Paste sorted DOM tree
+          for (let i=0; i<featuredArray.length; i++) {
+            sectionItems.appendChild(featuredArray[i]);
+          }
+          break;
+  
+        case "Price: Low to High":
+          let sortedArray = toSortArray.sort((a, b) => {
+            let innerValueA = a.children[2].innerHTML //Get value
+            innerValueA = innerValueA.split("");
+            innerValueA.shift();
+            innerValueA = 1 * innerValueA.join(""); //Get price from card 'number format'
+          
+            let innerValueB = b.children[2].innerHTML //Get value
+            innerValueB = innerValueB.split("");
+            innerValueB.shift();
+            innerValueB = 1 * innerValueB.join(""); //Get price from card 'number format'
+          
+            return innerValueA - innerValueB;
+          });
+
+          for (let i=0; i<sortedArray.length; i++) {
+            sectionItems.appendChild(sortedArray[i]);
+          }
+          
+          break;
+  
+        case "Price: High to Low":
+          let sortedArray2 = toSortArray.sort((a, b) => {
+            let innerValueA = a.children[2].innerHTML //Get value
+            innerValueA = innerValueA.split("");
+            innerValueA.shift();
+            innerValueA = 1 * innerValueA.join(""); //Get price from card 'number format'
+          
+            let innerValueB = b.children[2].innerHTML //Get value
+            innerValueB = innerValueB.split("");
+            innerValueB.shift();
+            innerValueB = 1 * innerValueB.join(""); //Get price from card 'number format'
+          
+            return innerValueB - innerValueA;
+          });
+
+          for (let i=0; i<sortedArray2.length; i++) {
+            sectionItems.appendChild(sortedArray2[i]);
+          }
+          
+          break;
+      }
+    }
+  }
+
   function dropMenuSelect() {
     const dropMenuButtons = document.querySelectorAll('.sort-dropdown > li');
     dropMenuButtons.forEach( (button) => button.classList.remove('selected'));
 
     this.classList.add('selected');
 
-    const sortValue = document.querySelector('.sort-selection');
-    sortValue.innerHTML = this.innerHTML;
+    const sortValueDiv = document.querySelector('.sort-selection');
+    let oldSortValue = sortValueDiv.innerHTML;
+
+    sortValueDiv.innerHTML = this.innerHTML;
+    let newSortValue = this.innerHTML;
+
+    dropMenuSorting(oldSortValue, newSortValue);
   }
 
+  //Get registryItems from DOM tree
+  const sectionItems = document.getElementById('items');
+  //Get snapshot of featured
+  const featuredArray = Array.from(document.getElementById('items').children);
+
+  //Add event to detect user selection
   const dropMenuButtons = document.querySelectorAll('.sort-dropdown > li');
   dropMenuButtons.forEach( (button) => button.addEventListener('click', dropMenuSelect));
+
+
+  // Filter
+
 }
