@@ -101,9 +101,8 @@ if (document.URL.includes('registry')) {
       switch (newSortValue) {
         case "Featured":
           //Paste sorted DOM tree
-          for (let i=0; i<featuredArray.length; i++) {
-            sectionItems.appendChild(featuredArray[i]);
-          }
+          sectionItems.replaceChildren(...featuredArray);
+
           break;
   
         case "Price: Low to High":
@@ -121,9 +120,7 @@ if (document.URL.includes('registry')) {
             return innerValueA - innerValueB;
           });
 
-          for (let i=0; i<sortedArray.length; i++) {
-            sectionItems.appendChild(sortedArray[i]);
-          }
+          sectionItems.replaceChildren(...sortedArray);
           
           break;
   
@@ -142,9 +139,7 @@ if (document.URL.includes('registry')) {
             return innerValueB - innerValueA;
           });
 
-          for (let i=0; i<sortedArray2.length; i++) {
-            sectionItems.appendChild(sortedArray2[i]);
-          }
+          sectionItems.replaceChildren(...sortedArray2);
           
           break;
       }
