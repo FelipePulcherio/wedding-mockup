@@ -713,7 +713,7 @@ footer {
         }
       }
 
-      &.hidden {
+      &.hidden, &.hidden2 {
         display: none;
       }
     }
