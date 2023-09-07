@@ -107,15 +107,15 @@ if (document.URL.includes('registry')) {
   
         case "Price: Low to High":
           let sortedArray = toSortArray.sort((a, b) => {
-            let innerValueA = a.children[2].innerHTML //Get value
+            let innerValueA = a.children[2].innerHTML; //Get value
             innerValueA = innerValueA.split("");
             innerValueA.shift();
             innerValueA = 1 * innerValueA.join(""); //Get price from card 'number format'
           
-            let innerValueB = b.children[2].innerHTML //Get value
+            let innerValueB = b.children[2].innerHTML;
             innerValueB = innerValueB.split("");
             innerValueB.shift();
-            innerValueB = 1 * innerValueB.join(""); //Get price from card 'number format'
+            innerValueB = 1 * innerValueB.join("");
           
             return innerValueA - innerValueB;
           });
@@ -126,15 +126,15 @@ if (document.URL.includes('registry')) {
   
         case "Price: High to Low":
           let sortedArray2 = toSortArray.sort((a, b) => {
-            let innerValueA = a.children[2].innerHTML //Get value
+            let innerValueA = a.children[2].innerHTML; //Get value
             innerValueA = innerValueA.split("");
             innerValueA.shift();
             innerValueA = 1 * innerValueA.join(""); //Get price from card 'number format'
           
-            let innerValueB = b.children[2].innerHTML //Get value
+            let innerValueB = b.children[2].innerHTML;
             innerValueB = innerValueB.split("");
             innerValueB.shift();
-            innerValueB = 1 * innerValueB.join(""); //Get price from card 'number format'
+            innerValueB = 1 * innerValueB.join("");
           
             return innerValueB - innerValueA;
           });
@@ -172,5 +172,79 @@ if (document.URL.includes('registry')) {
 
 
   // Filter
+  function filterPrice() {
 
+    //Check if some filter is already checked
+    let price = document.querySelectorAll("[name='price']");
+    let priceCheckCount = Array.from(price).filter(x => x.checked === true).length;
+
+    switch (true) {
+      case priceCheckCount == 0:
+        let cards = document.querySelectorAll('div.card');
+        cards.forEach((card) => card.classList.remove('hidden'));
+        break;
+
+      case this.value === '0-99':
+        if (priceCheckCount > 1 || (priceCheckCount == 1 && !this.checked)) {
+          let is99 = document.querySelectorAll('.card.upto99');
+          is99.forEach((card) => card.classList.toggle('hidden'));
+        } else {
+          let not99 = document.querySelectorAll('.card:not(.upto99)');
+          not99.forEach((card) => card.classList.toggle('hidden'));
+        }
+        break;
+
+      case this.value === '100-199':
+        if (priceCheckCount > 1 || (priceCheckCount == 1 && !this.checked)) {
+          let is199 = document.querySelectorAll('.card.upto199');
+          is199.forEach((card) => card.classList.toggle('hidden'));
+        } else {
+          let not199 = document.querySelectorAll('.card:not(.upto199)');
+          not199.forEach((card) => card.classList.toggle('hidden'));
+        }
+        break;
+
+      case this.value === '200':
+        if (priceCheckCount > 1 || (priceCheckCount == 1 && !this.checked)) {
+          let is200 = document.querySelectorAll('.card.upto200');
+          is200.forEach((card) => card.classList.toggle('hidden'));
+        } else {
+          let not200 = document.querySelectorAll('.card:not(.upto200)');
+          not200.forEach((card) => card.classList.toggle('hidden'));
+        }
+        break;
+    }
+  }
+
+  const inputPrice = document.querySelectorAll("[name='price']");
+  inputPrice.forEach( (button) => button.addEventListener('click', filterPrice));
+
+  function filterStatus() {
+
+    //Check if some status is already checked
+    let status = document.querySelectorAll("[name='status']");
+    let statusCheckCount = Array.from(status).filter(x => x.checked === true).length;
+    console.log(statusCheckCount);
+
+    switch (true) {
+      case statusCheckCount == 0 || statusCheckCount == 2:
+        let cards = document.querySelectorAll('div.card');
+        cards.forEach((card) => card.classList.remove('hidden2'));
+        break;
+
+      case this.value === 'Available':
+        let isAvailable = document.querySelectorAll('.card.purchased');
+        isAvailable.forEach((card) => card.classList.add('hidden2'));
+        break;
+
+      case this.value === 'Purchased':
+        let notAvailable = document.querySelectorAll('.card.available');
+        notAvailable.forEach((card) => card.classList.add('hidden2'));
+        break;
+    }
+  }
+
+  const inputStatus = document.querySelectorAll("[name='status']");
+  inputStatus.forEach( (button) => button.addEventListener('click', filterStatus));
+  
 }
