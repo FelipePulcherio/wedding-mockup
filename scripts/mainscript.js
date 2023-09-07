@@ -224,7 +224,6 @@ if (document.URL.includes('registry')) {
     //Check if some status is already checked
     let status = document.querySelectorAll("[name='status']");
     let statusCheckCount = Array.from(status).filter(x => x.checked === true).length;
-    console.log(statusCheckCount);
 
     switch (true) {
       case statusCheckCount == 0 || statusCheckCount == 2:
@@ -233,13 +232,23 @@ if (document.URL.includes('registry')) {
         break;
 
       case this.value === 'Available':
-        let isAvailable = document.querySelectorAll('.card.purchased');
-        isAvailable.forEach((card) => card.classList.add('hidden2'));
+        if (!this.checked) {
+          let isAvailable = document.querySelectorAll('.card.available');
+          isAvailable.forEach((card) => card.classList.add('hidden2'));
+        } else {
+          let isAvailable = document.querySelectorAll('.card.purchased');
+          isAvailable.forEach((card) => card.classList.add('hidden2'));
+        }
         break;
 
       case this.value === 'Purchased':
-        let notAvailable = document.querySelectorAll('.card.available');
-        notAvailable.forEach((card) => card.classList.add('hidden2'));
+        if (!this.checked) {
+          let notAvailable = document.querySelectorAll('.card.purchased');
+          notAvailable.forEach((card) => card.classList.add('hidden2'));
+        } else {
+          let notAvailable = document.querySelectorAll('.card.available');
+          notAvailable.forEach((card) => card.classList.add('hidden2'));
+        }
         break;
     }
   }
