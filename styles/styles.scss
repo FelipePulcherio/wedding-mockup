@@ -630,10 +630,6 @@ footer {
             justify-content: flex-start;
             align-items: center;
             gap: .5rem;
-
-            input[type="checkbox"] {
-
-            }
           }
         }
       }
@@ -642,7 +638,7 @@ footer {
 
   .items {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(18rem, auto));
     gap: 1.5rem 1.5rem;
 
     .card {
@@ -656,6 +652,7 @@ footer {
       gap: 1rem;
       padding: 1rem;
       flex: 1 1 0;
+      max-width: 20rem;
 
       img {
         width: 90%;
@@ -797,6 +794,16 @@ footer {
   .registry_message {
     margin-top: 10rem;
     padding-top: 0;
+  }
+
+  .registry_items {
+    .items {
+      grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+
+      .card {
+        max-width: 35rem;
+      }
+    }
   }
 
   footer {
