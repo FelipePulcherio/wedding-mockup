@@ -794,6 +794,11 @@ footer {
     }
   }
 
+  .registry_message {
+    margin-top: 10rem;
+    padding-top: 0;
+  }
+
   footer {
     flex-direction: column;
     gap: 2rem;
@@ -813,5 +818,14 @@ footer {
       margin-top: 10rem;
       padding: 0 1.5rem;
     }
+  }
+
+  .place_message {
+    margin-top: 10rem;
+  }
+
+  .registry_message {
+    margin-top: 10rem;
+    padding-top: 0;
   }
 }
