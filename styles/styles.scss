@@ -718,6 +718,55 @@ footer {
   }
 }
 
+/* ----- RSVP.HTML STYLING ----- */
+.rsvp_message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: $max-width;
+  margin: 18rem auto 0 auto;
+  padding: 0rem 1.5rem 4rem 1.5rem;
+  gap: 3rem;
+
+  .title {
+    font-size: clamp(2rem, 2rem + 1.5vw, 3.8rem);
+  }
+
+  .subtitle {
+    font-size: clamp(1.2rem, 1.2rem + .7vw, 2rem);
+  }
+
+  .image {
+    font-family: 'Parisienne', cursive;
+    font-weight: bold;
+    font-size: 6rem;
+    width: 10rem;
+    height: 10rem;
+
+    .first {
+      @include flexBetweenCenter-container;
+      justify-content: center;
+      position: relative;
+      width: 5rem;
+      height: 5rem;
+      top: 10%;
+      left: 2%;
+    }
+
+    .second {
+      @include flexBetweenCenter-container;
+      justify-content: center;
+      position: relative;
+      width: 5rem;
+      height: 5rem;
+      left: 44%;
+      top: 5%;
+    }
+  }
+}
+
 /* ----- MOBILE STYLING ----- */
 @media (max-width:500px) {
   header {
