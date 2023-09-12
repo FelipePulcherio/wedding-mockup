@@ -787,7 +787,7 @@ footer {
     font-size: clamp(1.2rem, 1.2rem + .7vw, 2rem);
 
     .confirmation {
-      /*max-width: 39rem;*/
+      width: 100%;
       padding: 0 1.5rem;
 
       .container-1 {
@@ -815,7 +815,7 @@ footer {
     }
 
     .guests {
-      /*width: calc(100% - 1.5rem);*/
+      width: 100%;
       padding: 0 1.5rem;
 
       &.hidden {
@@ -878,6 +878,12 @@ footer {
           margin-bottom: 2.5rem;
         }
 
+        &.remove {
+          opacity: 1;
+          left: 0;
+          animation: .2s forwards 0s slide-left;
+        }
+
         &.hidden {
           display: none;
         }
@@ -889,9 +895,16 @@ footer {
           left: 0;
         }
       }
+
+      @keyframes slide-left {
+        100% {
+          opacity: 0;
+          left: -25rem;
+        }
+      }
     }
 
-    input[type='text'], input[type='tel'] {
+    input[type='text'], input[type='tel'], input[type='email'] {
       font-family: 'Cutive Mono', monospace;
       font-size: clamp(1.2rem, 1.2rem + .7vw, 2rem);
       background-color: $color-place;
