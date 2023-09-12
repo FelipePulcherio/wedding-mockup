@@ -870,9 +870,9 @@ footer {
 
       .container-2 {
         position: relative;
-        left: -30rem;
+        left: -25rem;
         opacity: 0;
-        animation: .5s forwards 1s slide-right;
+        animation: .5s forwards 0s slide-right;
 
         & > input[type='text'] {
           margin-bottom: 2.5rem;
