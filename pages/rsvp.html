@@ -34,6 +34,58 @@
         <div class="second">V</div>
       </div>
     </div>
+    
+    <div class="rsvp_form">
+      <form class="form">
+        <section class="confirmation">
+          <div class="container-1">
+            <div class="title">Are you going to the event?</div>
+            <div class="wrapper">
+              <div class="radio">
+                <input type="radio" name="attendance" id="radio-yes" value="yes" checked>
+                <label for="radio-yes">Yes</label>
+              </div>
+              <div class="radio">
+                <input type="radio" name="attendance" id="radio-no" value="no">
+                <label for="radio-no">No</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-2">
+            <label for="input-name">Complete Name<span>*</span></label>
+            <input type="text" name="name" id="input-name" placeholder=" " pattern=".+" required="required">
+            <div class="error">*Please type something.</div>
+            
+            <label for="input-email">E-mail<span>*</span></label>
+            <input type="text" name="email" id="input-email" placeholder=" " pattern=".+" required="required">
+            <div class="error">*Please type something.</div>
+            
+            <label for="input-phone">Phone Number<span>*</span></label>
+            <input type="tel" name="phone" id="input-phone" placeholder=" " pattern="[0-9]{1,15}" required="required">
+            <div class="error">*Please type something.</div>
+          </div>
+        </section>
+
+        <section class="guests">
+          <div class="text">How many guests?</div>
+          <div class="container-1">
+            <div class="text">Guests:</div>
+            <div class="container-buttons">
+              <img class="minus" src="../images/minus-circle.svg">
+              <div class="value">0</div>
+              <img class="plus" src="../images/plus-circle.svg">
+            </div>
+          </div>
+          
+          <div class="container-2 hidden">
+            <label for="input-name">Guest Complete Name</label>
+            <input type="text" name="name" id="input-name" placeholder=" " pattern=".+" required="required">
+          </div>
+        </section>
+        <button type="button" id="form-button">SUBMIT</button>
+      </form>
+    </div>
   </main>
 
   <footer>
