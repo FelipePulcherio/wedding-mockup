@@ -53,17 +53,23 @@
           </div>
 
           <div class="container-2">
-            <label for="input-name">Complete Name<span>*</span></label>
-            <input type="text" name="name" id="input-name" placeholder=" " pattern=".+" required="required">
-            <div class="error">*Please type something.</div>
+            <div class="input-wrapper">
+              <label for="input-name">Complete Name<span>*</span></label>
+              <input type="text" name="name" id="input-name" placeholder=" " pattern="^\D+\s?$" required>
+              <div class="error">*Please use only letters and whitespace.</div>
+            </div>
             
-            <label for="input-email">E-mail<span>*</span></label>
-            <input type="text" name="email" id="input-email" placeholder=" " pattern=".+" required="required">
-            <div class="error">*Please type something.</div>
+            <div class="input-wrapper">
+              <label for="input-email">E-mail<span>*</span></label>
+              <input type="email" name="email" id="input-email" placeholder=" " required>
+              <div class="error">*Please follow the example: 'email@email.com'</div>
+            </div>
             
-            <label for="input-phone">Phone Number<span>*</span></label>
-            <input type="tel" name="phone" id="input-phone" placeholder=" " pattern="[0-9]{1,15}" required="required">
-            <div class="error">*Please type something.</div>
+            <div class="input-wrapper">
+              <label for="input-phone">Phone Number<span>*</span></label>
+              <input type="tel" name="phone" id="input-phone" placeholder=" " pattern="^\(?\d{3}\)?[\-\s]?\d{3}[\-\s]?\d{4}$" required>
+              <div class="error">*Please use USA/Canada phone pattern.</div>
+            </div>
           </div>
         </section>
 
@@ -72,18 +78,18 @@
           <div class="container-1">
             <div class="text">Guests:</div>
             <div class="container-buttons">
-              <img class="minus" src="../images/minus-circle.svg">
+              <img id="minus-plus" class="minus" src="../images/minus-circle.svg">
               <div class="value">0</div>
-              <img class="plus" src="../images/plus-circle.svg">
+              <img id="minus-plus" class="plus" src="../images/plus-circle.svg">
             </div>
           </div>
           
           <div class="container-2 hidden">
             <label for="input-name">Guest Complete Name</label>
-            <input type="text" name="name" id="input-name" placeholder=" " pattern=".+" required="required">
+            <input type="text" name="name" id="input-name" placeholder=" ">
           </div>
         </section>
-        <button type="button" id="form-button">SUBMIT</button>
+        <button type="submit" id="form-button">SUBMIT</button>
       </form>
     </div>
   </main>
