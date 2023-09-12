@@ -346,7 +346,7 @@ footer {
   background-color: $color-place;
   max-width: $max-width;
   margin: 0 auto;
-  padding: 4rem 3rem 4rem 3rem;
+  padding: 4rem 1.5rem;
 
   .first {
     display: flex;
@@ -763,6 +763,196 @@ footer {
       height: 5rem;
       left: 44%;
       top: 5%;
+    }
+  }
+}
+
+/** {
+  border: solid 1px black;
+}*/
+
+.rsvp_form {
+  background-color: $color-place;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 39rem;
+    margin: 0 auto;
+    font-size: clamp(1.2rem, 1.2rem + .7vw, 2rem);
+
+    .confirmation {
+      /*max-width: 39rem;*/
+      padding: 0 1.5rem;
+
+      .container-1 {
+        @include flexBetweenCenter-container;
+        gap: 2rem;
+        padding-bottom: 1.5rem;
+
+        .wrapper {
+          @include flexBetweenCenter-container;
+          gap: 1.5rem;
+
+          .radio {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: .5rem;
+          }
+        }
+      }
+
+      .container-2 {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    .guests {
+      /*width: calc(100% - 1.5rem);*/
+      padding: 0 1.5rem;
+
+      &.hidden {
+        display: none;
+      }
+
+      .text {
+        padding-bottom: 2.5rem;
+        text-align: center;
+      }
+
+      .container-1 {
+        display: flex;
+        justify-content: flex-start;
+        align-content: center;
+        gap: 2rem;
+        padding-bottom: 2.5rem;
+
+        .text {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding-bottom: 0;
+        }
+
+        .container-buttons {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 1rem;
+
+          .value {
+            font-size: clamp(1.7rem, 1.7rem + .5vw, 2.2rem);
+          }
+
+          img {
+            filter: invert(20%) sepia(100%);
+
+            &:hover {
+              cursor: pointer;
+              transition: all .15s ease-in-out;
+              transform: scale(1.1);
+            }
+
+            &:active {
+              transition: all 0s ease-in-out;
+              transform: scale(1);
+            }
+          }
+        }
+      }
+
+      .container-2 {
+        position: relative;
+        left: -30rem;
+        opacity: 0;
+        animation: .5s forwards 1s slide-right;
+
+        & > input[type='text'] {
+          margin-bottom: 2.5rem;
+        }
+
+        &.hidden {
+          display: none;
+        }
+      }
+
+      @keyframes slide-right {    
+        100% {
+          opacity: 1;
+          left: 0;
+        }
+      }
+    }
+
+    input[type='text'], input[type='tel'] {
+      font-family: 'Cutive Mono', monospace;
+      font-size: clamp(1.2rem, 1.2rem + .7vw, 2rem);
+      background-color: $color-place;
+      width: calc(100% - 1.5rem);
+      height: 3rem;
+      margin-top: .5rem;
+      padding-left: 1rem;
+      border: 1.5px solid $color-highlight;
+
+      &:focus, &:hover {
+        border: 1.5px solid rgb(0,0,0);
+        outline: none;
+      }
+
+      &:not(:focus):not(:placeholder-shown):valid {
+        // Not focused, not empty, valid value
+        border: 1.5px solid $color-highlight;
+      }
+
+      &:not(:focus):not(:placeholder-shown):invalid {
+        // Not focused, not empty, invalid value
+        border: 1.5px solid rgb(255, 0, 0);
+    
+        & ~ .error {
+          opacity: 1;
+        }
+      }
+    }
+
+    .error {
+      font-size: clamp(1.2rem, 1rem + .5vw, 1.7rem);
+      display: block;
+      text-align: left;
+      overflow: visible;
+      color: rgb(255, 0, 0);
+      padding-bottom: 1.5rem;
+      opacity: 0;
+    }
+
+    button {
+      font-family: 'Cutive Mono', monospace;
+      font-size: clamp(1.2rem, 1.2rem + .7vw, 2rem);
+      margin-top: 1.5rem;
+      padding: .4rem 1rem;
+      font-weight: bold;
+      color: rgb(255, 255, 255);
+      background-color: $color-highlight;
+      border: none;
+      border-radius: .2rem;
+      box-shadow: 0 0rem .3rem $color-highlight;
+      cursor: pointer;
+
+      &:hover {
+        transition: all .15s ease-in-out;
+        transform: scale(1.1);
+      }
+
+      &:active {
+        transition: all 0s ease-in-out;
+        transform: scale(1);
+      }
     }
   }
 }
