@@ -288,19 +288,29 @@ if (document.URL.includes('rsvp')) {
       case (this.className === "minus"):
         if (value.innerHTML == 0) {
           break;
+
         } else if ((value.innerHTML == 1)) {
-          guests.lastElementChild.classList.add('hidden');
+          guests.lastElementChild.classList.add('remove');
+          guests.lastElementChild.addEventListener('animationend', function afterHiding() {
+            this.parentElement.lastElementChild.classList.remove('remove');
+            this.parentElement.lastElementChild.classList.add('hidden');
+          }, {once: true});
           value.innerHTML = (1 * value.innerHTML) - 1;
           break;
+
         } else {
-          guests.removeChild(guests.lastElementChild);
+          guests.lastElementChild.addEventListener('animationend', function afterRemoving() {
+            this.parentElement.lastElementChild.remove();
+          }, {once: true});
+          guests.lastElementChild.classList.add('remove');
           value.innerHTML = (1 * value.innerHTML) - 1;
           break;
         }
 
       case (this.className === "plus"):
-        if (value.innerHTML == 0) {
-          guestsContainer2.classList.remove('hidden');
+        if (value.innerHTML == 0) {          
+          guests.lastElementChild.classList.remove('hidden');
+
         } else {
           guests.append(guests.lastElementChild.cloneNode(true));
         } 
