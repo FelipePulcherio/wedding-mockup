@@ -257,3 +257,60 @@ if (document.URL.includes('registry')) {
   inputStatus.forEach( (button) => button.addEventListener('click', filterStatus));
   
 }
+
+// Rsvp.html section
+if (document.URL.includes('rsvp')) { 
+  //Yes or No check
+  function filterAttendance() {
+
+    const guestSection = document.querySelector('.guests');
+    
+    if (this.value === "no") {
+      guestSection.classList.add('hidden');
+    } else {
+      guestSection.classList.remove('hidden');
+    }
+  }
+
+  const inputAttendance = document.querySelectorAll("[name='attendance']");
+  inputAttendance.forEach( (button) => button.addEventListener('click', filterAttendance));
+
+
+  // Plus - Minus button
+  function plusMinusClick() {
+
+    //Get value
+    let value = document.querySelector('.value');
+    const guestsContainer2 = document.querySelector('.guests>.container-2');
+    const guests = guestsContainer2.parentElement;
+
+    switch (true) {
+      case (this.className === "minus"):
+        if (value.innerHTML == 0) {
+          break;
+        } else if ((value.innerHTML == 1)) {
+          guests.lastElementChild.classList.add('hidden');
+          value.innerHTML = (1 * value.innerHTML) - 1;
+          break;
+        } else {
+          guests.removeChild(guests.lastElementChild);
+          value.innerHTML = (1 * value.innerHTML) - 1;
+          break;
+        }
+
+      case (this.className === "plus"):
+        if (value.innerHTML == 0) {
+          guestsContainer2.classList.remove('hidden');
+        } else {
+          guests.append(guests.lastElementChild.cloneNode(true));
+        } 
+        value.innerHTML = (1 * value.innerHTML) + 1;
+        break;
+    }
+
+  }
+
+  const plusMinusButton = document.querySelectorAll("#minus-plus");
+  plusMinusButton.forEach( (button) => button.addEventListener('click', plusMinusClick));
+
+  }
