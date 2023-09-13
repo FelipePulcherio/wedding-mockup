@@ -1,4 +1,5 @@
 // Global Header section
+// Normal use
 function menuClick() {
   const menuButtons = document.querySelectorAll('a.title');
   menuButtons.forEach((button) => button.classList.remove('clicked'));
@@ -9,6 +10,18 @@ function menuClick() {
 const buttons = document.querySelectorAll('a.title');
 buttons.forEach( (button) => button.addEventListener('click', menuClick));
 
+
+//Mobile use
+function menuButtonClick() {
+  const menuMobile = document.querySelector('.menu-mobile');
+  const header = document.querySelector('.header');
+
+  menuMobile.style.top = `${header.offsetHeight-1}px`;
+  menuMobile.classList.toggle('hidden');
+}
+
+const menuButton = document.querySelector('img.mobile');
+menuButton.addEventListener('click', menuButtonClick);
 
 // Index.html section
 if (document.URL.includes('index')) {
