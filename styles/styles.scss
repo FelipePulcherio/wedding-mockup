@@ -76,6 +76,50 @@ header {
         display: none;
       }
     }
+
+    .menu-mobile {
+      position: fixed;
+      transform-origin: left;
+      z-index: 6;
+
+      left: 0;
+      top: 0rem;
+      width: 100vw;
+      height: 100%;
+      overflow-y: hidden;
+      background-color: $color-bg;  
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+
+      .main-title {
+        padding: 4rem 0 1rem 0;
+        display: block;
+        font-size: clamp(1.5rem, 1.5rem + 2vw, 3rem);
+        font-weight: bold;
+      }
+
+      a {
+        display: block;
+        padding-top: 2.5rem;
+        font-size: clamp(1.5rem, 1.5rem + 1vw, 2.5rem);
+
+        border-bottom: solid .25rem $color-bg-transparent;
+        transition: border-bottom .25s linear;
+
+        &.clicked, &:hover, &:active {
+          cursor: pointer;
+          border-bottom: solid .25rem $color-highlight;
+          border-radius: 5%;
+        }
+      }
+
+      &.hidden {
+        display: none;
+      }
+    }
   }
 }
 
@@ -182,18 +226,14 @@ main {
         width: 100%;
 
         & > div:first-child {
+          display: flex;
+          justify-content: center;
+          align-items: center;
           height: calc(clamp(1.7rem, 1.7rem + .5vw, 2.5rem)*2);
           width: 100%;
           font-size: clamp(1.7rem, 1.7rem + .5vw, 2.5rem);
           border-radius: 5%;
           background-color: $color-clock;
-
-          & > span {
-            height: inherit;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
         }
       }
     }
@@ -971,7 +1011,7 @@ footer {
 }
 
 /* ----- MOBILE STYLING ----- */
-@media (max-width:500px) {
+@media (max-width: 500px) {
   header {
     .header {
       padding: 1.2rem 1.5rem;
