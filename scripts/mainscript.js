@@ -1,4 +1,4 @@
-// Header section
+// Global Header section
 function menuClick() {
   const menuButtons = document.querySelectorAll('a.title');
   menuButtons.forEach((button) => button.classList.remove('clicked'));
@@ -9,11 +9,39 @@ function menuClick() {
 const buttons = document.querySelectorAll('a.title');
 buttons.forEach( (button) => button.addEventListener('click', menuClick));
 
-// SplideJS section
-/*import Splide from '@splidejs/splide';
-import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';*/
 
+// Index.html section
 if (document.URL.includes('index')) {
+
+  // Countdown
+  const days = document.getElementById('days');
+  const hours = document.getElementById('hours');
+  const minutes = document.getElementById('minutes');
+  const seconds = document.getElementById('seconds'); 
+
+  const weddingDate = new Date('2023-10-31T13:00:00.000-07:00');
+
+  function updateCountdown() {
+    const currentTime = new Date();
+    const distance = weddingDate - currentTime;
+
+    const d = Math.floor(distance / 1000 / 60 / 60 / 24);
+    const h = Math.floor(distance / 1000 / 60 / 60 ) % 24;
+    const m = Math.floor(distance / 1000 / 60 ) % 60;
+    const s = Math.floor(distance / 1000 ) % 60;
+
+    days.innerHTML = d;
+    hours.innerHTML = h < 10 ? '0' + h : h;
+    minutes.innerHTML = m < 10 ? '0' + m : m;
+    seconds.innerHTML = s < 10 ? '0' + s : s;
+  }
+
+  setInterval(updateCountdown, 1000);
+
+
+  //Index.html SplideJS section
+  /*import Splide from '@splidejs/splide';
+  import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';*/
   const Splide = window.Splide;
 
   const splide = new Splide('.splide', {
