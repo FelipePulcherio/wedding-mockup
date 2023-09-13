@@ -39,9 +39,7 @@ if (document.URL.includes('index')) {
   setInterval(updateCountdown, 1000);
 
 
-  //Index.html SplideJS section
-  /*import Splide from '@splidejs/splide';
-  import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';*/
+  // Carousel (SplideJS)
   const Splide = window.Splide;
 
   const splide = new Splide('.splide', {
