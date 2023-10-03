@@ -16,11 +16,13 @@ function menuButtonClick() {
   const menuMobile = document.querySelector('.menu-mobile');
   const header = document.querySelector('.header');
 
+  this.classList.toggle('active');
+  this.classList.toggle('not-active');
   menuMobile.style.top = `${header.offsetHeight-1}px`;
   menuMobile.classList.toggle('hidden');
 }
 
-const menuButton = document.querySelector('img.mobile');
+const menuButton = document.getElementById('hamburger-menu');
 menuButton.addEventListener('click', menuButtonClick);
 
 // Index.html section
