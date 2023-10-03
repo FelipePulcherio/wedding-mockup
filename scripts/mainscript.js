@@ -26,7 +26,7 @@ const menuButton = document.getElementById('hamburger-menu');
 menuButton.addEventListener('click', menuButtonClick);
 
 // Index.html section
-if (document.URL.includes('index')) {
+if (document.URL.includes('index') || !(document.URL.includes('.html'))) {
 
   // Countdown
   const days = document.getElementById('days');
