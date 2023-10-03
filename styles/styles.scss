@@ -215,6 +215,8 @@ header {
       justify-content: flex-start;
       align-items: center;
 
+      transition: all .7s;
+
       .main-title {
         padding: 4rem 0 1rem 0;
         display: block;
@@ -238,7 +240,9 @@ header {
       }
 
       &.hidden {
-        display: none;
+        opacity: 0.5;
+        left: 100vw;
+        transition: all .7s;
       }
     }
   }
