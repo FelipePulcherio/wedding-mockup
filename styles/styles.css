@@ -1,1 +1,1085 @@
-/*# sourceMappingURL=styles.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Michroma&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-size: 10px;
+  background-color: rgb(221, 199, 180);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ----- INDEX.HTML STYLING ----- */
+header {
+  background-color: rgb(221, 199, 180);
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+  box-shadow: inset 0 -0.5rem 1rem -1rem rgb(80, 80, 80);
+}
+header .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.8rem 1.5rem;
+}
+header .header > a {
+  font-family: "Parisienne", cursive;
+  font-size: clamp(1.5rem, 1.5rem + 2vw, 3rem);
+}
+header .header > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Cutive Mono", monospace;
+  gap: 2.5rem;
+  font-size: clamp(1.5rem, 1.5rem + 0.4vw, 1.8rem);
+}
+header .header > div > a {
+  font-size: clamp(1.3rem, 1rem + 0.7vw, 1.7rem);
+  border-bottom: solid 0.25rem rgba(221, 199, 180, 0);
+  transition: border-bottom 0.25s linear;
+}
+header .header > div > a.clicked, header .header > div a:hover {
+  cursor: pointer;
+  border-bottom: solid 0.25rem rgba(56, 34, 15, 0.5);
+  border-radius: 5%;
+}
+header .header > div .btn {
+  width: 26px;
+  height: 20px;
+  display: none;
+}
+header .header > div span {
+  display: block;
+  width: 100%;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 1px;
+  height: 1.5px;
+  background: rgb(0, 0, 0);
+  transition: all 0.3s;
+  position: relative;
+}
+header .header > div span + span {
+  margin-top: 8.5px;
+}
+header .header > div .active span:nth-child(1) {
+  animation: ease 0.7s topSpan forwards;
+}
+header .header > div .not-active span:nth-child(1) {
+  animation: ease 0.7s topSpan-2 forwards;
+}
+header .header > div .active span:nth-child(2) {
+  animation: ease 0.7s scaled forwards;
+}
+header .header > div .not-active span:nth-child(2) {
+  animation: ease 0.7s scaled-2 forwards;
+}
+header .header > div .active span:nth-child(3) {
+  animation: ease 0.7s bottomSpan forwards;
+}
+header .header > div .not-active span:nth-child(3) {
+  animation: ease 0.7s bottomSpan-2 forwards;
+}
+@keyframes topSpan {
+  0% {
+    top: 0;
+    transform: rotate(0);
+  }
+  50% {
+    top: 10px;
+    transform: rotate(0);
+  }
+  100% {
+    top: 10px;
+    transform: rotate(45deg);
+  }
+}
+@keyframes topSpan-2 {
+  0% {
+    top: 10px;
+    transform: rotate(45deg);
+  }
+  50% {
+    top: 10px;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: 0;
+    transform: rotate(0deg);
+  }
+}
+@keyframes bottomSpan {
+  0% {
+    bottom: 0;
+    transform: rotate(0);
+  }
+  50% {
+    bottom: 10px;
+    transform: rotate(0);
+  }
+  100% {
+    bottom: 10px;
+    transform: rotate(135deg);
+  }
+}
+@keyframes bottomSpan-2 {
+  0% {
+    bottom: 10px;
+    transform: rotate(135deg);
+  }
+  50% {
+    bottom: 10px;
+    transform: rotate(0);
+  }
+  100% {
+    bottom: 0;
+    transform: rotate(0);
+  }
+}
+@keyframes scaled {
+  50% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes scaled-2 {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+header .header .menu-mobile {
+  position: fixed;
+  transform-origin: left;
+  z-index: 6;
+  left: 0;
+  top: 0rem;
+  width: 100vw;
+  height: 100%;
+  overflow-y: hidden;
+  background-color: rgb(221, 199, 180);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  transition: all 0.7s;
+}
+header .header .menu-mobile .main-title {
+  padding: 4rem 0 1rem 0;
+  display: block;
+  font-size: clamp(1.5rem, 1.5rem + 2vw, 3rem);
+  font-weight: bold;
+}
+header .header .menu-mobile a {
+  display: block;
+  padding-top: 2.5rem;
+  font-size: clamp(1.5rem, 1.5rem + 1vw, 2.5rem);
+  border-bottom: solid 0.25rem rgba(221, 199, 180, 0);
+  transition: border-bottom 0.25s linear;
+}
+header .header .menu-mobile a.clicked, header .header .menu-mobile a:hover, header .header .menu-mobile a:active {
+  cursor: pointer;
+  border-bottom: solid 0.25rem rgba(56, 34, 15, 0.5);
+  border-radius: 5%;
+}
+header .header .menu-mobile.hidden {
+  opacity: 0.5;
+  left: 100vw;
+  transition: all 0.7s;
+}
+
+main {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "Cutive Mono", monospace;
+}
+main .main-photo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  margin: 18rem auto 0 auto;
+  padding: 0 1rem;
+  max-width: 1100px;
+  max-height: 540px;
+}
+main .main-photo > img {
+  grid-column: 1/2;
+  width: 100%;
+  max-width: 540px;
+  margin: 0 0 0 auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .main-photo > .right-section {
+  grid-column: 2/3;
+  display: grid;
+  grid-template-rows: 0.5fr 2fr 0.5fr;
+  grid-template-columns: 1fr;
+  width: 100%;
+  letter-spacing: 0.5rem;
+  white-space: nowrap;
+}
+main .main-photo > .right-section .first {
+  grid-row: 1/2;
+  place-self: start stretch;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0 0 clamp(1rem, 1.5rem + 2vw, 4rem);
+  font-size: clamp(1.2rem, 1rem + 0.5vw, 1.7rem);
+}
+main .main-photo > .right-section .first > .line {
+  border-bottom: solid 1.5px #000000;
+  flex: 1 0 1000px;
+}
+main .main-photo > .right-section .second {
+  grid-row: 2/3;
+  place-self: center stretch;
+  font-family: "Parisienne", cursive;
+  font-weight: 500;
+  letter-spacing: normal;
+  font-size: clamp(1.5rem, 1.8rem + 3.5vw, 6rem);
+  padding-left: clamp(1rem, 1.5rem + 2vw, 4rem);
+}
+main .main-photo > .right-section .third {
+  grid-row: 3/4;
+  place-self: end stretch;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 0 1rem 0.1rem;
+  font-size: clamp(1.2rem, 1rem + 0.5vw, 1.7rem);
+}
+main .main-photo > .right-section .third > .line {
+  border-bottom: solid 1.5px #000000;
+  flex: 1;
+}
+main .countdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  width: clamp(20rem, 20rem + 20vw, 60rem);
+  padding: 8rem 0;
+  font-size: clamp(1.2rem, 1rem + 0.5vw, 1.7rem);
+}
+main .countdown .text {
+  padding: 2.5rem 0;
+}
+main .countdown .clock {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+main .countdown .clock .days, main .countdown .clock .hours, main .countdown .clock .minutes, main .countdown .clock .seconds {
+  place-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+main .countdown .clock .days > div:first-child, main .countdown .clock .hours > div:first-child, main .countdown .clock .minutes > div:first-child, main .countdown .clock .seconds > div:first-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(clamp(1.7rem, 1.7rem + 0.5vw, 2.5rem) * 2);
+  width: 100%;
+  font-size: clamp(1.7rem, 1.7rem + 0.5vw, 2.5rem);
+  border-radius: 5%;
+  background-color: rgb(190, 168, 149);
+}
+main .brief {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 1.5rem 8rem 1.5rem;
+  gap: 2rem;
+}
+main .brief .title {
+  font-size: clamp(2rem, 2rem + 1.5vw, 3.8rem);
+}
+main .brief .subtitle {
+  font-size: clamp(1.2rem, 1.2rem + 0.7vw, 2rem);
+}
+main .brief p {
+  max-width: 1100px;
+  font-size: clamp(1.2rem, 1rem + 0.5vw, 1.7rem);
+}
+main .brief .image {
+  font-family: "Parisienne", cursive;
+  font-weight: bold;
+  font-size: 6rem;
+  width: 10rem;
+  height: 10rem;
+}
+main .brief .image .first {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  top: 10%;
+  left: 2%;
+}
+main .brief .image .second {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  left: 44%;
+  top: 5%;
+}
+
+.splide {
+  padding: 4rem 0 8rem 0;
+}
+.splide .splide__slider .splide__track .splide__list img {
+  width: 20vw;
+}
+.splide .splide__slider .splide__pagination {
+  padding-bottom: 8rem;
+}
+
+footer {
+  font-family: "Cutive Mono", monospace;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 1.5rem 3rem 1.5rem;
+  gap: 1.5rem;
+  box-shadow: inset 0 0.5rem 1rem -1rem rgb(80, 80, 80);
+}
+footer .social, footer .social > a, footer .counter, footer .personal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-items: center;
+  gap: 2rem;
+}
+footer .counter {
+  gap: 0;
+  font-size: clamp(1.2rem, 1rem + 0.5vw, 1.7rem);
+}
+footer .personal {
+  font-size: clamp(1.2rem, 1.2rem + 0.7vw, 2rem);
+}
+
+/* ----- PLACE.HTML STYLING ----- */
+.place_message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 1100px;
+  margin: 18rem auto 0 auto;
+  padding: 0rem 1.5rem 4rem 1.5rem;
+  gap: 3rem;
+}
+.place_message .title {
+  font-size: clamp(2rem, 2rem + 1.5vw, 3.8rem);
+}
+.place_message .subtitle {
+  font-size: clamp(1.2rem, 1.2rem + 0.7vw, 2rem);
+}
+.place_message .image {
+  font-family: "Parisienne", cursive;
+  font-weight: bold;
+  font-size: 6rem;
+  width: 10rem;
+  height: 10rem;
+}
+.place_message .image .first {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  top: 10%;
+  left: 2%;
+}
+.place_message .image .second {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  left: 44%;
+  top: 5%;
+}
+
+.place_directions {
+  background-color: rgb(225, 205, 189);
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+.place_directions .first {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 2rem;
+  padding-bottom: 4rem;
+}
+.place_directions .first .place_img {
+  width: min(35rem, 100%);
+}
+.place_directions .first .text .address {
+  font-size: clamp(1.2rem, 1.2rem + 0.7vw, 2rem);
+  font-weight: bold;
+  padding-top: 1rem;
+}
+.place_directions .first .text .date {
+  font-size: clamp(1.2rem, 1rem + 0.5vw, 1.7rem);
+  padding-top: 2rem;
+}
+.place_directions .second {
+  padding-bottom: 4rem;
+}
+.place_directions .second img {
+  width: 100%;
+}
+.place_directions .third div {
+  font-size: clamp(1.2rem, 1.2rem + 0.7vw, 2rem);
+  text-align: center;
+}
+.place_directions .third section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.place_directions .third section input[type=text] {
+  font-family: "Cutive Mono", monospace;
+  font-size: clamp(1.2rem, 1.2rem + 0.7vw, 2rem);
+  background-color: rgb(225, 205, 189);
+  width: 50%;
+  height: 3rem;
+  margin: 2rem 0 0.5rem 0;
+  padding-left: 1rem;
+  border: 1.5px solid rgba(56, 34, 15, 0.5);
+}
+.place_directions .third section input[type=text]:focus, .place_directions .third section input[type=text]:hover {
+  border: 1.5px solid rgb(0, 0, 0);
+  outline: none;
+}
+.place_directions .third section input[type=text]:not(:focus):not(:-moz-placeholder-shown):valid {
+  border: 1.5px solid rgba(56, 34, 15, 0.5);
+}
+.place_directions .third section input[type=text]:not(:focus):not(:placeholder-shown):valid {
+  border: 1.5px solid rgba(56, 34, 15, 0.5);
+}
+.place_directions .third section input[type=text]:not(:focus):not(:-moz-placeholder-shown):invalid {
+  border: 1.5px solid rgb(255, 0, 0);
+}
+.place_directions .third section input[type=text]:not(:focus):not(:placeholder-shown):invalid {
+  border: 1.5px solid rgb(255, 0, 0);
+}
+.place_directions .third section input[type=text]:not(:focus):not(:-moz-placeholder-shown):invalid ~ .error {
+  opacity: 1;
+}
+.place_directions .third section input[type=text]:not(:focus):not(:placeholder-shown):invalid ~ .error {
+  opacity: 1;
+}
+.place_directions .third section .error {
+  display: block;
+  text-align: left;
+  overflow: visible;
+  color: rgb(255, 0, 0);
+  width: 50%;
+  padding-bottom: 0.5rem;
+  opacity: 0;
+}
+.place_directions .third div > button {
+  font-family: "Cutive Mono", monospace;
+  font-size: clamp(1.2rem, 1.2rem + 0.7vw, 2rem);
+  padding: 0.8rem 1rem;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  background-color: rgba(56, 34, 15, 0.5);
+  border: none;
+  border-radius: 0.2rem;
+  box-shadow: 0 0rem 0.6rem rgba(56, 34, 15, 0.5);
+  cursor: pointer;
+}
+.place_directions .third div > button:hover {
+  transition: all 0.15s ease-in-out;
+  transform: scale(0.95);
+}
+
+/* ----- REGISTRY.HTML STYLING ----- */
+.registry_message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 1100px;
+  margin: 18rem auto 0 auto;
+  padding: 0rem 1.5rem 4rem 1.5rem;
+  gap: 3rem;
+}
+.registry_message .title {
+  font-size: clamp(2rem, 2rem + 1.5vw, 3.8rem);
+}
+.registry_message .subtitle {
+  font-size: clamp(1.2rem, 1.2rem + 0.7vw, 2rem);
+}
+.registry_message .image {
+  font-family: "Parisienne", cursive;
+  font-weight: bold;
+  font-size: 6rem;
+  width: 10rem;
+  height: 10rem;
+}
+.registry_message .image .first {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  top: 10%;
+  left: 2%;
+}
+.registry_message .image .second {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  left: 44%;
+  top: 5%;
+}
+
+.registry_items {
+  font-family: "Cutive Mono", monospace;
+  max-width: 1100px;
+  margin: 0 auto 4rem auto;
+  padding: 0rem 1.5rem 1.5rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: repeat(auto-fit, minmax(3rem, 1fr));
+  gap: 0 1.5rem;
+  border: solid 1px rgba(56, 34, 15, 0.5);
+  border-radius: 0.3rem;
+}
+.registry_items .sort {
+  grid-column: 1/-1;
+  grid-row: 1/1;
+  margin: 0 0 0 auto;
+  position: relative;
+}
+.registry_items .sort .sort-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  margin: 1.5rem 0;
+  border: solid 1px rgba(56, 34, 15, 0.5);
+  border-radius: 0.3rem;
+}
+.registry_items .sort .sort-wrapper .sort-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-left: 0.7rem;
+}
+.registry_items .sort .sort-wrapper .sort-text .sort-title {
+  font-size: clamp(1rem, 1rem + 0.5vw, 1.5rem);
+  line-height: calc(clamp(1rem, 1rem + 0.5vw, 1.5rem) * 1.2);
+}
+.registry_items .sort .sort-wrapper .sort-text .sort-selection {
+  font-size: clamp(1.2rem, 1rem + 0.7vw, 1.8rem);
+  line-height: calc(clamp(1.2rem, 1rem + 0.7vw, 1.8rem) * 1.2);
+  font-weight: bold;
+}
+.registry_items .sort .sort-wrapper .sort-img {
+  margin-right: 1rem;
+  transition: transform 0.2s linear;
+}
+.registry_items .sort .sort-wrapper .sort-img.clicked {
+  transform: rotate(180deg);
+}
+.registry_items .sort .sort-dropdown {
+  list-style: none;
+  font-size: clamp(1rem, 1rem + 0.5vw, 1.5rem);
+  width: 99.5%;
+  background-color: rgb(221, 199, 180);
+  border: solid 1px rgba(56, 34, 15, 0.5);
+  border-top: solid 1px rgb(0, 0, 0);
+  border-radius: 0.3rem;
+  position: absolute;
+  top: calc(clamp(1rem, 1rem + 0.5vw, 1.5rem) * 1.2 + clamp(1.2rem, 1rem + 0.7vw, 1.8rem) * 1.2 + 1.5rem);
+  z-index: 4;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.2s linear;
+}
+.registry_items .sort .sort-dropdown.clicked {
+  visibility: visible;
+  opacity: 1;
+}
+.registry_items .sort .sort-dropdown li {
+  padding: 0.7rem;
+}
+.registry_items .sort .sort-dropdown li:hover, .registry_items .sort .sort-dropdown li.selected {
+  cursor: pointer;
+  color: white;
+  background-color: rgba(56, 34, 15, 0.5);
+}
+.registry_items .sort .sort-exit {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0);
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  visibility: hidden;
+}
+.registry_items .filter {
+  grid-column: 1/2;
+  grid-row: 2/2;
+  font-size: clamp(1.2rem, 1rem + 0.5vw, 1.7rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+.registry_items .filter div .title {
+  font-weight: bold;
+  padding-bottom: 1rem;
+}
+.registry_items .filter div ol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.registry_items .filter div ol li {
+  list-style-type: none;
+}
+.registry_items .filter div ol li label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+.registry_items .items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, auto));
+  gap: 1.5rem 1.5rem;
+}
+.registry_items .items .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 0rem 0.2rem rgba(56, 34, 15, 0.5);
+  background-color: rgb(225, 205, 189);
+  gap: 1rem;
+  padding: 1rem;
+  flex: 1 1 0;
+  max-width: 20rem;
+}
+.registry_items .items .card img {
+  width: 90%;
+}
+.registry_items .items .card .card-title {
+  font-size: clamp(1rem, 1rem + 0.5vw, 1.5rem);
+}
+.registry_items .items .card .card-price {
+  font-size: clamp(1rem, 1rem + 0.5vw, 1.5rem);
+  font-weight: bold;
+}
+.registry_items .items .card button {
+  font-family: "Cutive Mono", monospace;
+  font-size: clamp(1.2rem, 1.2rem + 0.7vw, 2rem);
+  padding: 0.4rem 1rem;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  background-color: rgba(56, 34, 15, 0.5);
+  border: none;
+  border-radius: 0.2rem;
+  box-shadow: 0 0rem 0.3rem rgba(56, 34, 15, 0.5);
+  cursor: pointer;
+}
+.registry_items .items .card button:hover {
+  transition: all 0.15s ease-in-out;
+  transform: scale(0.95);
+}
+.registry_items .items .card.purchased {
+  filter: grayscale(70%);
+  cursor: not-allowed;
+}
+.registry_items .items .card.purchased button {
+  cursor: not-allowed;
+  visibility: hidden;
+  margin-top: calc(-1 * clamp(1.2rem, 1.2rem + 0.7vw, 2rem) - 0.8rem);
+}
+.registry_items .items .card.purchased button:after {
+  content: "SOLD!";
+  visibility: visible;
+  display: block;
+  background-color: rgba(56, 34, 15, 0.5);
+  padding: 0.4rem 1rem;
+  border: none;
+  border-radius: 0.2rem;
+  box-shadow: 0 0rem 0.3rem rgba(56, 34, 15, 0.5);
+}
+.registry_items .items .card.purchased button:hover {
+  transform: scale(1);
+}
+.registry_items .items .card.hidden, .registry_items .items .card.hidden2 {
+  display: none;
+}
+
+/* ----- RSVP.HTML STYLING ----- */
+.rsvp_message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 1100px;
+  margin: 18rem auto 0 auto;
+  padding: 0rem 1.5rem 4rem 1.5rem;
+  gap: 3rem;
+}
+.rsvp_message .title {
+  font-size: clamp(2rem, 2rem + 1.5vw, 3.8rem);
+}
+.rsvp_message .subtitle {
+  font-size: clamp(1.2rem, 1.2rem + 0.7vw, 2rem);
+}
+.rsvp_message .image {
+  font-family: "Parisienne", cursive;
+  font-weight: bold;
+  font-size: 6rem;
+  width: 10rem;
+  height: 10rem;
+}
+.rsvp_message .image .first {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  top: 10%;
+  left: 2%;
+}
+.rsvp_message .image .second {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  left: 44%;
+  top: 5%;
+}
+
+.rsvp_form {
+  background-color: rgb(225, 205, 189);
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+.rsvp_form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 39rem;
+  margin: 0 auto;
+  font-size: clamp(1.2rem, 1.2rem + 0.7vw, 2rem);
+}
+.rsvp_form form .confirmation {
+  width: 100%;
+  padding: 0 1.5rem;
+}
+.rsvp_form form .confirmation .container-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 1.5rem;
+}
+.rsvp_form form .confirmation .container-1 .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+.rsvp_form form .confirmation .container-1 .wrapper .radio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.rsvp_form form .confirmation .container-2 {
+  display: flex;
+  flex-direction: column;
+}
+.rsvp_form form .guests {
+  width: 100%;
+  padding: 0 1.5rem;
+}
+.rsvp_form form .guests.hidden {
+  display: none;
+}
+.rsvp_form form .guests .text {
+  padding-bottom: 2.5rem;
+  text-align: center;
+}
+.rsvp_form form .guests .container-1 {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  gap: 2rem;
+  padding-bottom: 2.5rem;
+}
+.rsvp_form form .guests .container-1 .text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 0;
+}
+.rsvp_form form .guests .container-1 .container-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.rsvp_form form .guests .container-1 .container-buttons .value {
+  font-size: clamp(1.7rem, 1.7rem + 0.5vw, 2.2rem);
+}
+.rsvp_form form .guests .container-1 .container-buttons img {
+  filter: invert(20%) sepia(100%);
+}
+.rsvp_form form .guests .container-1 .container-buttons img:hover {
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  transform: scale(1.1);
+}
+.rsvp_form form .guests .container-1 .container-buttons img:active {
+  transition: all 0s ease-in-out;
+  transform: scale(1);
+}
+.rsvp_form form .guests .container-2 {
+  position: relative;
+  left: -25rem;
+  opacity: 0;
+  animation: 0.5s forwards 0s slide-right;
+}
+.rsvp_form form .guests .container-2 > input[type=text] {
+  margin-bottom: 2.5rem;
+}
+.rsvp_form form .guests .container-2.remove {
+  opacity: 1;
+  left: 0;
+  animation: 0.2s forwards 0s slide-left;
+}
+.rsvp_form form .guests .container-2.hidden {
+  display: none;
+}
+@keyframes slide-right {
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+@keyframes slide-left {
+  100% {
+    opacity: 0;
+    left: -25rem;
+  }
+}
+.rsvp_form form input[type=text], .rsvp_form form input[type=tel], .rsvp_form form input[type=email] {
+  font-family: "Cutive Mono", monospace;
+  font-size: clamp(1.2rem, 1.2rem + 0.7vw, 2rem);
+  background-color: rgb(225, 205, 189);
+  width: calc(100% - 1.5rem);
+  height: 3rem;
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+  border: 1.5px solid rgba(56, 34, 15, 0.5);
+}
+.rsvp_form form input[type=text]:focus, .rsvp_form form input[type=text]:hover, .rsvp_form form input[type=tel]:focus, .rsvp_form form input[type=tel]:hover, .rsvp_form form input[type=email]:focus, .rsvp_form form input[type=email]:hover {
+  border: 1.5px solid rgb(0, 0, 0);
+  outline: none;
+}
+.rsvp_form form input[type=text]:not(:focus):not(:-moz-placeholder-shown):valid, .rsvp_form form input[type=tel]:not(:focus):not(:-moz-placeholder-shown):valid, .rsvp_form form input[type=email]:not(:focus):not(:-moz-placeholder-shown):valid {
+  border: 1.5px solid rgba(56, 34, 15, 0.5);
+}
+.rsvp_form form input[type=text]:not(:focus):not(:placeholder-shown):valid, .rsvp_form form input[type=tel]:not(:focus):not(:placeholder-shown):valid, .rsvp_form form input[type=email]:not(:focus):not(:placeholder-shown):valid {
+  border: 1.5px solid rgba(56, 34, 15, 0.5);
+}
+.rsvp_form form input[type=text]:not(:focus):not(:-moz-placeholder-shown):invalid, .rsvp_form form input[type=tel]:not(:focus):not(:-moz-placeholder-shown):invalid, .rsvp_form form input[type=email]:not(:focus):not(:-moz-placeholder-shown):invalid {
+  border: 1.5px solid rgb(255, 0, 0);
+}
+.rsvp_form form input[type=text]:not(:focus):not(:placeholder-shown):invalid, .rsvp_form form input[type=tel]:not(:focus):not(:placeholder-shown):invalid, .rsvp_form form input[type=email]:not(:focus):not(:placeholder-shown):invalid {
+  border: 1.5px solid rgb(255, 0, 0);
+}
+.rsvp_form form input[type=text]:not(:focus):not(:-moz-placeholder-shown):invalid ~ .error, .rsvp_form form input[type=tel]:not(:focus):not(:-moz-placeholder-shown):invalid ~ .error, .rsvp_form form input[type=email]:not(:focus):not(:-moz-placeholder-shown):invalid ~ .error {
+  opacity: 1;
+}
+.rsvp_form form input[type=text]:not(:focus):not(:placeholder-shown):invalid ~ .error, .rsvp_form form input[type=tel]:not(:focus):not(:placeholder-shown):invalid ~ .error, .rsvp_form form input[type=email]:not(:focus):not(:placeholder-shown):invalid ~ .error {
+  opacity: 1;
+}
+.rsvp_form form .error {
+  font-size: clamp(1.2rem, 1rem + 0.5vw, 1.7rem);
+  display: block;
+  text-align: left;
+  overflow: visible;
+  color: rgb(255, 0, 0);
+  padding-bottom: 1.5rem;
+  opacity: 0;
+}
+.rsvp_form form button {
+  font-family: "Cutive Mono", monospace;
+  font-size: clamp(1.2rem, 1.2rem + 0.7vw, 2rem);
+  margin-top: 1.5rem;
+  padding: 0.4rem 1rem;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  background-color: rgba(56, 34, 15, 0.5);
+  border: none;
+  border-radius: 0.2rem;
+  box-shadow: 0 0rem 0.3rem rgba(56, 34, 15, 0.5);
+  cursor: pointer;
+}
+.rsvp_form form button:hover {
+  transition: all 0.15s ease-in-out;
+  transform: scale(1.1);
+}
+.rsvp_form form button:active {
+  transition: all 0s ease-in-out;
+  transform: scale(1);
+}
+
+/* ----- MOBILE STYLING ----- */
+@media (max-width: 500px) {
+  header .header {
+    padding: 1.2rem 1.5rem;
+  }
+  .dropdown a {
+    display: none;
+  }
+  .dropdown #hamburger-menu {
+    display: block;
+  }
+  main .main-photo {
+    margin-top: 8rem;
+    padding: 0 1.5rem;
+  }
+  main .countdown {
+    width: 20rem;
+    padding: 3rem 0;
+  }
+  main .countdown .clock {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .first > .text, .third > .text {
+    display: none;
+  }
+  div.brief, section.splide, footer {
+    padding: 3rem 1.5rem;
+  }
+  section.splide {
+    padding-bottom: 6rem;
+  }
+  #splide_img {
+    width: 40vw;
+  }
+  .place_message {
+    margin-top: 10rem;
+  }
+  .place_directions .first .place_img {
+    display: none;
+  }
+  .place_directions .first .text {
+    display: block;
+  }
+  .place_directions .third section input[type=text], .place_directions .third section div.error {
+    width: 80%;
+  }
+  .registry_message {
+    margin-top: 10rem;
+    padding-top: 0;
+  }
+  .registry_items .items {
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  }
+  .registry_items .items .card {
+    max-width: 35rem;
+  }
+  footer {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+/* ----- TABLET STYLING ----- */
+@media (max-width: 1000px) {
+  header .header {
+    padding: 2rem 1.5rem;
+  }
+  main .main-photo {
+    margin-top: 10rem;
+    padding: 0 1.5rem;
+  }
+  .place_message {
+    margin-top: 10rem;
+  }
+  .registry_message {
+    margin-top: 10rem;
+    padding-top: 0;
+  }
+}/*# sourceMappingURL=styles.css.map */
