@@ -51,7 +51,8 @@ header .header > div > a {
   border-bottom: solid 0.25rem rgba(221, 199, 180, 0);
   transition: border-bottom 0.25s linear;
 }
-header .header > div > a.clicked, header .header > div a:hover {
+header .header > div > a.clicked,
+header .header > div a:hover {
   cursor: pointer;
   border-bottom: solid 0.25rem rgba(56, 34, 15, 0.5);
   border-radius: 5%;
@@ -294,7 +295,10 @@ main .countdown .clock {
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
 }
-main .countdown .clock .days, main .countdown .clock .hours, main .countdown .clock .minutes, main .countdown .clock .seconds {
+main .countdown .clock .days,
+main .countdown .clock .hours,
+main .countdown .clock .minutes,
+main .countdown .clock .seconds {
   place-self: center;
   display: flex;
   flex-direction: column;
@@ -303,7 +307,10 @@ main .countdown .clock .days, main .countdown .clock .hours, main .countdown .cl
   gap: 0.5rem;
   width: 100%;
 }
-main .countdown .clock .days > div:first-child, main .countdown .clock .hours > div:first-child, main .countdown .clock .minutes > div:first-child, main .countdown .clock .seconds > div:first-child {
+main .countdown .clock .days > div:first-child,
+main .countdown .clock .hours > div:first-child,
+main .countdown .clock .minutes > div:first-child,
+main .countdown .clock .seconds > div:first-child {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -382,7 +389,10 @@ footer {
   gap: 1.5rem;
   box-shadow: inset 0 0.5rem 1rem -1rem rgb(80, 80, 80);
 }
-footer .social, footer .social > a, footer .counter, footer .personal {
+footer .social,
+footer .social > a,
+footer .counter,
+footer .personal {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -726,6 +736,7 @@ footer .personal {
   max-width: 20rem;
 }
 .registry_items .items .card img {
+  aspect-ratio: 1/1;
   width: 90%;
 }
 .registry_items .items .card .card-title {
@@ -941,7 +952,9 @@ footer .personal {
     left: -25rem;
   }
 }
-.rsvp_form form input[type=text], .rsvp_form form input[type=tel], .rsvp_form form input[type=email] {
+.rsvp_form form input[type=text],
+.rsvp_form form input[type=tel],
+.rsvp_form form input[type=email] {
   font-family: "Cutive Mono", monospace;
   font-size: clamp(1.2rem, 1.2rem + 0.7vw, 2rem);
   background-color: rgb(225, 205, 189);
@@ -951,26 +964,36 @@ footer .personal {
   padding-left: 1rem;
   border: 1.5px solid rgba(56, 34, 15, 0.5);
 }
-.rsvp_form form input[type=text]:focus, .rsvp_form form input[type=text]:hover, .rsvp_form form input[type=tel]:focus, .rsvp_form form input[type=tel]:hover, .rsvp_form form input[type=email]:focus, .rsvp_form form input[type=email]:hover {
+.rsvp_form form input[type=text]:focus, .rsvp_form form input[type=text]:hover,
+.rsvp_form form input[type=tel]:focus,
+.rsvp_form form input[type=tel]:hover,
+.rsvp_form form input[type=email]:focus,
+.rsvp_form form input[type=email]:hover {
   border: 1.5px solid rgb(0, 0, 0);
   outline: none;
 }
 .rsvp_form form input[type=text]:not(:focus):not(:-moz-placeholder-shown):valid, .rsvp_form form input[type=tel]:not(:focus):not(:-moz-placeholder-shown):valid, .rsvp_form form input[type=email]:not(:focus):not(:-moz-placeholder-shown):valid {
   border: 1.5px solid rgba(56, 34, 15, 0.5);
 }
-.rsvp_form form input[type=text]:not(:focus):not(:placeholder-shown):valid, .rsvp_form form input[type=tel]:not(:focus):not(:placeholder-shown):valid, .rsvp_form form input[type=email]:not(:focus):not(:placeholder-shown):valid {
+.rsvp_form form input[type=text]:not(:focus):not(:placeholder-shown):valid,
+.rsvp_form form input[type=tel]:not(:focus):not(:placeholder-shown):valid,
+.rsvp_form form input[type=email]:not(:focus):not(:placeholder-shown):valid {
   border: 1.5px solid rgba(56, 34, 15, 0.5);
 }
 .rsvp_form form input[type=text]:not(:focus):not(:-moz-placeholder-shown):invalid, .rsvp_form form input[type=tel]:not(:focus):not(:-moz-placeholder-shown):invalid, .rsvp_form form input[type=email]:not(:focus):not(:-moz-placeholder-shown):invalid {
   border: 1.5px solid rgb(255, 0, 0);
 }
-.rsvp_form form input[type=text]:not(:focus):not(:placeholder-shown):invalid, .rsvp_form form input[type=tel]:not(:focus):not(:placeholder-shown):invalid, .rsvp_form form input[type=email]:not(:focus):not(:placeholder-shown):invalid {
+.rsvp_form form input[type=text]:not(:focus):not(:placeholder-shown):invalid,
+.rsvp_form form input[type=tel]:not(:focus):not(:placeholder-shown):invalid,
+.rsvp_form form input[type=email]:not(:focus):not(:placeholder-shown):invalid {
   border: 1.5px solid rgb(255, 0, 0);
 }
 .rsvp_form form input[type=text]:not(:focus):not(:-moz-placeholder-shown):invalid ~ .error, .rsvp_form form input[type=tel]:not(:focus):not(:-moz-placeholder-shown):invalid ~ .error, .rsvp_form form input[type=email]:not(:focus):not(:-moz-placeholder-shown):invalid ~ .error {
   opacity: 1;
 }
-.rsvp_form form input[type=text]:not(:focus):not(:placeholder-shown):invalid ~ .error, .rsvp_form form input[type=tel]:not(:focus):not(:placeholder-shown):invalid ~ .error, .rsvp_form form input[type=email]:not(:focus):not(:placeholder-shown):invalid ~ .error {
+.rsvp_form form input[type=text]:not(:focus):not(:placeholder-shown):invalid ~ .error,
+.rsvp_form form input[type=tel]:not(:focus):not(:placeholder-shown):invalid ~ .error,
+.rsvp_form form input[type=email]:not(:focus):not(:placeholder-shown):invalid ~ .error {
   opacity: 1;
 }
 .rsvp_form form .error {
@@ -1027,10 +1050,13 @@ footer .personal {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
   }
-  .first > .text, .third > .text {
+  .first > .text,
+  .third > .text {
     display: none;
   }
-  div.brief, section.splide, footer {
+  div.brief,
+  section.splide,
+  footer {
     padding: 3rem 1.5rem;
   }
   section.splide {
@@ -1048,7 +1074,8 @@ footer .personal {
   .place_directions .first .text {
     display: block;
   }
-  .place_directions .third section input[type=text], .place_directions .third section div.error {
+  .place_directions .third section input[type=text],
+  .place_directions .third section div.error {
     width: 80%;
   }
   .registry_message {
