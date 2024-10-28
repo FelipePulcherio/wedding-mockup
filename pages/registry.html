@@ -1,224 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../styles/styles.css">
-  <link rel="shortcut icon" type="image/x-icon" href="">
-  <script src="../scripts/mainscript.js" defer></script>
-  <title>Nathan & Victoria</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="" />
+    <script src="../scripts/mainscript.js" defer></script>
+    <title>Nathan & Victoria</title>
+  </head>
 
-<body>
-  <header>
-    <div class="header">
-      <a class="coupleName" href="../index.html">N + V</a>
-      <div class="dropdown">
-        <a class="title" href="../index.html">HOME</a>
-        <a class="title" href="place.html">PLACE</a>
-        <a class="title clicked" href="registry.html">REGISTRY</a>
-        <a class="title" href="rsvp.html">RSVP</a>
-        <div id="hamburger-menu" class="btn not-active">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-
-      <div id="menu-mobile" class="menu-mobile hidden">
-        <div class="main-title">PAGES</div>
-        <a class="title" href="../index.html">HOME</a>
-        <a class="title" href="place.html">PLACE</a>
-        <a class="title clicked" href="registry.html">REGISTRY</a>
-        <a class="title" href="rsvp.html">RSVP</a>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <div class="registry_message">
-      <div class="title">WEDDING REGISTRY</div>
-      <div class="image">
-        <div class="first">N</div>
-        <div class="second">V</div>
-      </div>
-      <div class="subtitle"><b>Quick reminder:</b> Prices listed below are symbolic and may not be used to buy the specified item. If you wish to gift us a custom amount please <a href="">click here!</a></div>
-    </div>
-
-    <div class="registry_items">
-      <section class="sort">
-        <div class="sort-wrapper">
-          <div class="sort-text">
-            <div class="sort-title">Sort By</div>
-            <div class="sort-selection">Featured</div>
+  <body>
+    <header>
+      <div class="header">
+        <a class="coupleName" href="../index.html">N + V</a>
+        <div class="dropdown">
+          <a class="title" href="../index.html">HOME</a>
+          <a class="title" href="place.html">PLACE</a>
+          <a class="title clicked" href="registry.html">REGISTRY</a>
+          <a class="title" href="rsvp.html">RSVP</a>
+          <div id="hamburger-menu" class="btn not-active">
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
-          <img class="sort-img" src="../images/chevron-down.svg">
-        </div>
-        <ul class="sort-dropdown">
-          <li class="selected">Featured</li>
-          <li>Price: Low to High</li>
-          <li>Price: High to Low</li>
-        </ul>
-        <div class="sort-exit"></div>
-      </section>
-
-      <section class="filter">
-        <div class="container-1">
-          <div class="title">Price</div>
-          <ol>
-            <li>
-              <label for="price-1">
-                <input type="checkbox" id="price-1" name="price" value="0-99">
-                $0-99
-              </label>
-            </li>
-            <li>
-              <label for="price-2">
-                <input type="checkbox" id="price-2" name="price" value="100-199">
-                $100-199
-              </label>
-            </li>
-            <li>
-              <label for="price-3">
-                <input type="checkbox" id="price-3" name="price" value="200">
-                $200+
-              </label>
-            </li>
-          </ol>
         </div>
 
-        <div class="container-2">
-          <div class="title">Status</div>
-          <ol>
-            <li>
-              <label for="status-1">
-                <input type="checkbox" id="status-1" name="status" value="Available">
-                Available
-              </label>
-            </li>
-            <li>
-              <label for="status-2">
-                <input type="checkbox" id="status-2" name="status" value="Purchased">
-                Purchased
-              </label>
-            </li>
-          </ol>
+        <div id="menu-mobile" class="menu-mobile hidden">
+          <div class="main-title">PAGES</div>
+          <a class="title" href="../index.html">HOME</a>
+          <a class="title" href="place.html">PLACE</a>
+          <a class="title clicked" href="registry.html">REGISTRY</a>
+          <a class="title" href="rsvp.html">RSVP</a>
         </div>
-      </section>
+      </div>
+    </header>
 
-      <section class="items" id="items">
-        <div class="card upto199 available">
-          <img src="../images/couplephoto.jpg">
-          <div class="card-title">Robot Vaccum Cleaner</div>
-          <div class="card-price">$139.97</div>
-          <button class="card-button">BUY</button>
+    <main>
+      <div class="registry_message">
+        <div class="title">WEDDING REGISTRY</div>
+        <div class="image">
+          <div class="first">N</div>
+          <div class="second">V</div>
         </div>
-        <div class="card upto99 purchased">
-          <img src="../images/couplephoto.jpg">
-          <div class="card-title">Electric Kettle</div>
-          <div class="card-price">$26.97</div>
-          <button class="card-button">BUY</button>
+        <div class="subtitle">
+          <b>Quick reminder:</b> Prices listed below are symbolic and may not be
+          used to buy the specified item. If you wish to gift us a custom amount
+          please <a href="">click here!</a>
         </div>
-        <div class="card upto199 available">
-          <img src="../images/couplephoto.jpg">
-          <div class="card-title">Microwave</div>
-          <div class="card-price">$110.00</div>
-          <button class="card-button">BUY</button>
-        </div>
-        <div class="card upto99 available">
-          <img src="../images/couplephoto.jpg">
-          <div class="card-title">Large Wine Glass Set</div>
-          <div class="card-price">$98.97</div>
-          <button class="card-button">BUY</button>
-        </div>
-        <div class="card upto200 available">
-          <img src="../images/couplephoto.jpg">
-          <div class="card-title">Tilt-head Stand Mixer</div>
-          <div class="card-price">$379.98</div>
-          <button class="card-button">BUY</button>
-        </div>
-        <div class="card upto99 purchased">
-          <img src="../images/couplephoto.jpg">
-          <div class="card-title">Photo Frame</div>
-          <div class="card-price">$10.99</div>
-          <button class="card-button">BUY</button>
-        </div>
-        <div class="card upto199 available">
-          <img src="../images/couplephoto.jpg">
-          <div class="card-title">Professional Blender</div>
-          <div class="card-price">$109.98</div>
-          <button class="card-button">BUY</button>
-        </div>
-        <div class="card upto200 available">
-          <img src="../images/couplephoto.jpg">
-          <div class="card-title">Flatware Set</div>
-          <div class="card-price">$259.99</div>
-          <button class="card-button">BUY</button>
-        </div>
-        <div class="card upto99 available">
-          <img src="../images/couplephoto.jpg">
-          <div class="card-title">Toaster</div>
-          <div class="card-price">$42.98</div>
-          <button class="card-button">BUY</button>
-        </div>
-        <div class="card upto199 purchased">
-          <img src="../images/couplephoto.jpg">
-          <div class="card-title">Coffe Maker</div>
-          <div class="card-price">$129.97</div>
-          <button class="card-button">BUY</button>
-        </div>
-        <div class="card upto200 available">
-          <img src="../images/couplephoto.jpg">
-          <div class="card-title">34-Bottle Wine Cooler</div>
-          <div class="card-price">$299.98</div>
-          <button class="card-button">BUY</button>
-        </div>
-        <div class="card upto99 available">
-          <img src="../images/couplephoto.jpg">
-          <div class="card-title">Nightstand</div>
-          <div class="card-price">$67.97</div>
-          <button class="card-button">BUY</button>
-        </div>
-        <div class="card upto199 available">
-          <img src="../images/couplephoto.jpg">
-          <div class="card-title">Pots & Pans Set</div>
-          <div class="card-price">$159.99</div>
-          <button class="card-button">BUY</button>
-        </div>
-        <div class="card upto199 available">
-          <img src="../images/couplephoto.jpg">
-          <div class="card-title">Dual Zone Air Fryer</div>
-          <div class="card-price">$198.98</div>
-          <button class="card-button">BUY</button>
-        </div>
-        <div class="card upto99 purchased">
-          <img src="../images/couplephoto.jpg">
-          <div class="card-title">Duvet Cover Set</div>
-          <div class="card-price">$99.00</div>
-          <button class="card-button">BUY</button>
-        </div>
-        <div class="card upto200 available">
-          <img src="../images/couplephoto.jpg">
-          <div class="card-title">Single Bottle Chiller</div>
-          <div class="card-price">$219.00</div>
-          <button class="card-button">BUY</button>
-        </div>
-      </section>
-    </div>
+      </div>
 
-  </main>
+      <div class="registry_items">
+        <section class="sort">
+          <div class="sort-wrapper">
+            <div class="sort-text">
+              <div class="sort-title">Sort By</div>
+              <div class="sort-selection">Featured</div>
+            </div>
+            <img class="sort-img" src="../images/chevron-down.svg" />
+          </div>
+          <ul class="sort-dropdown">
+            <li class="selected">Featured</li>
+            <li>Price: Low to High</li>
+            <li>Price: High to Low</li>
+          </ul>
+          <div class="sort-exit"></div>
+        </section>
 
-  <footer>
-    <div class="social">
-      <a href="https://www.facebook.com/sharer/sharer.php?u=https://google.com/" target="_blank" rel="noopener"><img class="facebook" src="../images/brand-facebook.svg"></a>
-      <a href="http://pinterest.com/pin/create/link/?url=https://www.google.com/" target="_blank" rel="noopener"><img class="pinterest" src="../images/brand-pinterest.svg"></a>
-      <a href="http://www.twitter.com/share?url=https://www.google.com/>" target="_blank" rel="noopener"><img class="twitter" src="../images/brand-twitter.svg"></a>
-    </div>
-    <div class="counter">
-      <div><a>439</a> VISITORS HAVE ALREADY CHECKED OUT OUR WEDDING WEBSITE.</div>
-    </div>
-    <a class="personal" href="https://github.com/FelipePulcherio/">FSP</a>
-  </footer>
-</body>
+        <section class="filter">
+          <div class="container-1">
+            <div class="title">Price</div>
+            <ol>
+              <li>
+                <label for="price-1">
+                  <input
+                    type="checkbox"
+                    id="price-1"
+                    name="price"
+                    value="0-99"
+                  />
+                  $0-99
+                </label>
+              </li>
+              <li>
+                <label for="price-2">
+                  <input
+                    type="checkbox"
+                    id="price-2"
+                    name="price"
+                    value="100-199"
+                  />
+                  $100-199
+                </label>
+              </li>
+              <li>
+                <label for="price-3">
+                  <input
+                    type="checkbox"
+                    id="price-3"
+                    name="price"
+                    value="200"
+                  />
+                  $200+
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="container-2">
+            <div class="title">Status</div>
+            <ol>
+              <li>
+                <label for="status-1">
+                  <input
+                    type="checkbox"
+                    id="status-1"
+                    name="status"
+                    value="Available"
+                  />
+                  Available
+                </label>
+              </li>
+              <li>
+                <label for="status-2">
+                  <input
+                    type="checkbox"
+                    id="status-2"
+                    name="status"
+                    value="Purchased"
+                  />
+                  Purchased
+                </label>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="items" id="items">
+          <div class="card upto199 available">
+            <img src="../images/vaccum-cleaner.png" />
+            <div class="card-title">Robot Vaccum Cleaner</div>
+            <div class="card-price">$139.97</div>
+            <button class="card-button">BUY</button>
+          </div>
+          <div class="card upto99 purchased">
+            <img src="../images/electric-kettle.jpg" />
+            <div class="card-title">Electric Kettle</div>
+            <div class="card-price">$26.97</div>
+            <button class="card-button">BUY</button>
+          </div>
+          <div class="card upto199 available">
+            <img src="../images/microwave.jpg" />
+            <div class="card-title">Microwave</div>
+            <div class="card-price">$110.00</div>
+            <button class="card-button">BUY</button>
+          </div>
+          <div class="card upto99 available">
+            <img src="../images/wine-glass.jpg" />
+            <div class="card-title">Large Wine Glass Set</div>
+            <div class="card-price">$98.97</div>
+            <button class="card-button">BUY</button>
+          </div>
+          <div class="card upto200 available">
+            <img src="../images/head-stand-mixer.jpg" />
+            <div class="card-title">Tilt-head Stand Mixer</div>
+            <div class="card-price">$379.98</div>
+            <button class="card-button">BUY</button>
+          </div>
+          <div class="card upto99 purchased">
+            <img src="../images/photo-frame.jpg" />
+            <div class="card-title">Photo Frame</div>
+            <div class="card-price">$10.99</div>
+            <button class="card-button">BUY</button>
+          </div>
+          <div class="card upto199 available">
+            <img src="../images/blender.jpg" />
+            <div class="card-title">Professional Blender</div>
+            <div class="card-price">$109.98</div>
+            <button class="card-button">BUY</button>
+          </div>
+          <div class="card upto200 available">
+            <img src="../images/flatware-set.jpg" />
+            <div class="card-title">Flatware Set</div>
+            <div class="card-price">$259.99</div>
+            <button class="card-button">BUY</button>
+          </div>
+          <div class="card upto99 available">
+            <img src="../images/toaster.jpg" />
+            <div class="card-title">Toaster</div>
+            <div class="card-price">$42.98</div>
+            <button class="card-button">BUY</button>
+          </div>
+          <div class="card upto199 purchased">
+            <img src="../images/coffee-maker.jpg" />
+            <div class="card-title">Coffe Maker</div>
+            <div class="card-price">$129.97</div>
+            <button class="card-button">BUY</button>
+          </div>
+          <div class="card upto200 available">
+            <img src="../images/wine-cooler.jpg" />
+            <div class="card-title">34-Bottle Wine Cooler</div>
+            <div class="card-price">$299.98</div>
+            <button class="card-button">BUY</button>
+          </div>
+          <div class="card upto99 available">
+            <img src="../images/nightstand.jpeg" />
+            <div class="card-title">Nightstand</div>
+            <div class="card-price">$67.97</div>
+            <button class="card-button">BUY</button>
+          </div>
+          <div class="card upto199 available">
+            <img src="../images/pots-and-pans.jpg" />
+            <div class="card-title">Pots & Pans Set</div>
+            <div class="card-price">$159.99</div>
+            <button class="card-button">BUY</button>
+          </div>
+          <div class="card upto199 available">
+            <img src="../images/airfryer.jpg" />
+            <div class="card-title">Dual Zone Air Fryer</div>
+            <div class="card-price">$198.98</div>
+            <button class="card-button">BUY</button>
+          </div>
+          <div class="card upto99 purchased">
+            <img src="../images/duvet-cover.jpeg" />
+            <div class="card-title">Duvet Cover Set</div>
+            <div class="card-price">$99.00</div>
+            <button class="card-button">BUY</button>
+          </div>
+          <div class="card upto200 available">
+            <img src="../images/bottle-chiller.jpg" />
+            <div class="card-title">Single Bottle Chiller</div>
+            <div class="card-price">$219.00</div>
+            <button class="card-button">BUY</button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="social">
+        <a
+          href="https://www.facebook.com/sharer/sharer.php?u=https://google.com/"
+          target="_blank"
+          rel="noopener"
+          ><img class="facebook" src="../images/brand-facebook.svg"
+        /></a>
+        <a
+          href="http://pinterest.com/pin/create/link/?url=https://www.google.com/"
+          target="_blank"
+          rel="noopener"
+          ><img class="pinterest" src="../images/brand-pinterest.svg"
+        /></a>
+        <a
+          href="http://www.twitter.com/share?url=https://www.google.com/>"
+          target="_blank"
+          rel="noopener"
+          ><img class="twitter" src="../images/brand-twitter.svg"
+        /></a>
+      </div>
+      <div class="counter">
+        <div>
+          <a>439</a> VISITORS HAVE ALREADY CHECKED OUT OUR WEDDING WEBSITE.
+        </div>
+      </div>
+      <a class="personal" href="https://github.com/FelipePulcherio/">FSP</a>
+    </footer>
+  </body>
 </html>
