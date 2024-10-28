@@ -8,17 +8,16 @@ function menuClick() {
 }
 
 const buttons = document.querySelectorAll('a.title');
-buttons.forEach( (button) => button.addEventListener('click', menuClick));
+buttons.forEach((button) => button.addEventListener('click', menuClick));
 
-
-//Mobile use
+// Mobile use
 function menuButtonClick() {
   const menuMobile = document.querySelector('.menu-mobile');
   const header = document.querySelector('.header');
 
   this.classList.toggle('active');
   this.classList.toggle('not-active');
-  menuMobile.style.top = `${header.offsetHeight-1}px`;
+  menuMobile.style.top = `${header.offsetHeight - 1}px`;
   menuMobile.classList.toggle('hidden');
 }
 
@@ -26,24 +25,23 @@ const menuButton = document.getElementById('hamburger-menu');
 menuButton.addEventListener('click', menuButtonClick);
 
 // Index.html section
-if (document.URL.includes('index') || !(document.URL.includes('.html'))) {
-
+if (document.URL.includes('index') || !document.URL.includes('.html')) {
   // Countdown
   const days = document.getElementById('days');
   const hours = document.getElementById('hours');
   const minutes = document.getElementById('minutes');
-  const seconds = document.getElementById('seconds'); 
+  const seconds = document.getElementById('seconds');
 
-  const weddingDate = new Date('2023-10-31T13:00:00.000-07:00');
+  const weddingDate = new Date('2025-02-31T13:00:00.000-07:00');
 
   function updateCountdown() {
     const currentTime = new Date();
     const distance = weddingDate - currentTime;
 
     const d = Math.floor(distance / 1000 / 60 / 60 / 24);
-    const h = Math.floor(distance / 1000 / 60 / 60 ) % 24;
-    const m = Math.floor(distance / 1000 / 60 ) % 60;
-    const s = Math.floor(distance / 1000 ) % 60;
+    const h = Math.floor(distance / 1000 / 60 / 60) % 24;
+    const m = Math.floor(distance / 1000 / 60) % 60;
+    const s = Math.floor(distance / 1000) % 60;
 
     days.innerHTML = d;
     hours.innerHTML = h < 10 ? '0' + h : h;
@@ -53,14 +51,13 @@ if (document.URL.includes('index') || !(document.URL.includes('.html'))) {
 
   setInterval(updateCountdown, 1000);
 
-
   // Carousel (SplideJS)
   const Splide = window.Splide;
 
   const splide = new Splide('.splide', {
-    type   : 'loop',
-    drag   : 'free',
-    focus  : 'center',
+    type: 'loop',
+    drag: 'free',
+    focus: 'center',
     perPage: 3,
     breakpoints: {
       500: {
@@ -70,7 +67,7 @@ if (document.URL.includes('index') || !(document.URL.includes('.html'))) {
     autoScroll: {
       speed: 0.4,
     },
-  } );
+  });
 
   splide.mount(window.splide.Extensions);
 }
@@ -80,36 +77,37 @@ if (document.URL.includes('place')) {
   function routeButton() {
     let place_input = document.getElementById('route');
     console.log(place_input.value);
-    const input_array = place_input.value.split(" ");
+    const input_array = place_input.value.split(' ');
     let new_array = [];
 
     for (let i = 0; i < input_array.length; i++) {
       new_array.push(input_array[i]);
-      new_array.push("%20");
+      new_array.push('%20');
     }
     new_array.pop();
-    new_array = new_array.join("");
+    new_array = new_array.join('');
 
-    if (place_input.validity.valid && (input_array.length != 0)) {
-      window.open(`https://www.google.com/maps?saddr=${new_array}&daddr=49.21523537499222,-122.90742482946524`);   
+    if (place_input.validity.valid && input_array.length != 0) {
+      window.open(
+        `https://www.google.com/maps?saddr=${new_array}&daddr=49.21523537499222,-122.90742482946524`
+      );
     }
   }
 
-  let placeButton = document.getElementById("placeButton");
-  placeButton.addEventListener("click", routeButton);
+  let placeButton = document.getElementById('placeButton');
+  placeButton.addEventListener('click', routeButton);
 }
 
 // Registry.html section
-if (document.URL.includes('registry')) { 
-  //Dropdown menu (open-close)
-  //https://stackoverflow.com/questions/5066925/javascript-only-sort-a-bunch-of-divs
+if (document.URL.includes('registry')) {
+  // Dropdown menu (open-close)
   function dropMenuClick() {
     this.classList.toggle('clicked');
     const dropMenu = document.querySelector('.sort-dropdown');
     dropMenu.classList.toggle('clicked');
 
     const dropDownExit = document.querySelector('.sort-exit');
-    dropDownExit.style.visibility = "visible";
+    dropDownExit.style.visibility = 'visible';
     dropDownExit.addEventListener('click', dropMenuExit);
   }
 
@@ -120,68 +118,66 @@ if (document.URL.includes('registry')) {
     const dropMenu = document.querySelector('.sort-dropdown');
     dropMenu.classList.remove('clicked');
 
-    this.style.visibility = "hidden";
+    this.style.visibility = 'hidden';
   }
 
   const dropButton = document.querySelector('.sort-img');
   dropButton.addEventListener('click', dropMenuClick);
 
-
-  //Dropdown menu (selection)
+  // Dropdown menu (selection)
   function dropMenuSorting(oldSortValue, newSortValue) {
-
-    //Identify which button was pressed. Was it the same?
-    if (oldSortValue !== newSortValue) {         
-      //Get nodeList of items to sort
+    // Identify which button was pressed. Was it the same?
+    if (oldSortValue !== newSortValue) {
+      // Get nodeList of items to sort
       let toSort = document.getElementById('items').children;
       let toSortArray = Array.from(toSort);
 
-      //Remove actual DOM tree
+      // Remove actual DOM tree
       document.getElementById('items').replaceChildren();
 
       switch (newSortValue) {
-        case "Featured":
-          //Paste sorted DOM tree
+        case 'Featured':
+          // Paste sorted DOM tree
           sectionItems.replaceChildren(...featuredArray);
 
           break;
-  
-        case "Price: Low to High":
+
+        case 'Price: Low to High':
           let sortedArray = toSortArray.sort((a, b) => {
-            let innerValueA = a.children[2].innerHTML; //Get value
-            innerValueA = innerValueA.split("");
+            let innerValueA = a.children[2].innerHTML; // Get value
+            innerValueA = innerValueA.split('');
             innerValueA.shift();
-            innerValueA = 1 * innerValueA.join(""); //Get price from card 'number format'
-          
+            innerValueA = 1 * innerValueA.join(''); // Get price from card 'number format'
+
             let innerValueB = b.children[2].innerHTML;
-            innerValueB = innerValueB.split("");
+            innerValueB = innerValueB.split('');
             innerValueB.shift();
-            innerValueB = 1 * innerValueB.join("");
-          
+            innerValueB = 1 * innerValueB.join('');
+
             return innerValueA - innerValueB;
           });
 
           sectionItems.replaceChildren(...sortedArray);
-          
+
           break;
-  
-        case "Price: High to Low":
+
+        case 'Price: High to Low':
           let sortedArray2 = toSortArray.sort((a, b) => {
-            let innerValueA = a.children[2].innerHTML; //Get value
-            innerValueA = innerValueA.split("");
+            let innerValueA = a.children[2].innerHTML; // Get value
+            innerValueA = innerValueA.split('');
             innerValueA.shift();
-            innerValueA = 1 * innerValueA.join(""); //Get price from card 'number format'
-          
+            innerValueA = 1 * innerValueA.join(''); // Get price from card 'number format'
+
             let innerValueB = b.children[2].innerHTML;
-            innerValueB = innerValueB.split("");
+            innerValueB = innerValueB.split('');
             innerValueB.shift();
-            innerValueB = 1 * innerValueB.join("");
-          
+            innerValueB = 1 * innerValueB.join('');
+
             return innerValueB - innerValueA;
           });
 
           sectionItems.replaceChildren(...sortedArray2);
-          
+
           break;
       }
     }
@@ -189,7 +185,7 @@ if (document.URL.includes('registry')) {
 
   function dropMenuSelect() {
     const dropMenuButtons = document.querySelectorAll('.sort-dropdown > li');
-    dropMenuButtons.forEach( (button) => button.classList.remove('selected'));
+    dropMenuButtons.forEach((button) => button.classList.remove('selected'));
 
     this.classList.add('selected');
 
@@ -202,22 +198,24 @@ if (document.URL.includes('registry')) {
     dropMenuSorting(oldSortValue, newSortValue);
   }
 
-  //Get registryItems from DOM tree
+  // Get registryItems from DOM tree
   const sectionItems = document.getElementById('items');
-  //Get snapshot of featured
+  // Get snapshot of featured
   const featuredArray = Array.from(document.getElementById('items').children);
 
-  //Add event to detect user selection
+  // Add event to detect user selection
   const dropMenuButtons = document.querySelectorAll('.sort-dropdown > li');
-  dropMenuButtons.forEach( (button) => button.addEventListener('click', dropMenuSelect));
-
+  dropMenuButtons.forEach((button) =>
+    button.addEventListener('click', dropMenuSelect)
+  );
 
   // Filter
   function filterPrice() {
-
-    //Check if some filter is already checked
+    // Check if some filter is already checked
     let price = document.querySelectorAll("[name='price']");
-    let priceCheckCount = Array.from(price).filter(x => x.checked === true).length;
+    let priceCheckCount = Array.from(price).filter(
+      (x) => x.checked === true
+    ).length;
 
     switch (true) {
       case priceCheckCount == 0:
@@ -258,13 +256,14 @@ if (document.URL.includes('registry')) {
   }
 
   const inputPrice = document.querySelectorAll("[name='price']");
-  inputPrice.forEach( (button) => button.addEventListener('click', filterPrice));
+  inputPrice.forEach((button) => button.addEventListener('click', filterPrice));
 
   function filterStatus() {
-
-    //Check if some status is already checked
+    // Check if some status is already checked
     let status = document.querySelectorAll("[name='status']");
-    let statusCheckCount = Array.from(status).filter(x => x.checked === true).length;
+    let statusCheckCount = Array.from(status).filter(
+      (x) => x.checked === true
+    ).length;
 
     switch (true) {
       case statusCheckCount == 0 || statusCheckCount == 2:
@@ -295,18 +294,18 @@ if (document.URL.includes('registry')) {
   }
 
   const inputStatus = document.querySelectorAll("[name='status']");
-  inputStatus.forEach( (button) => button.addEventListener('click', filterStatus));
-  
+  inputStatus.forEach((button) =>
+    button.addEventListener('click', filterStatus)
+  );
 }
 
 // Rsvp.html section
-if (document.URL.includes('rsvp')) { 
-  //Yes or No check
+if (document.URL.includes('rsvp')) {
+  // Yes or No check
   function filterAttendance() {
-
     const guestSection = document.querySelector('.guests');
-    
-    if (this.value === "no") {
+
+    if (this.value === 'no') {
       guestSection.classList.add('hidden');
     } else {
       guestSection.classList.remove('hidden');
@@ -314,54 +313,59 @@ if (document.URL.includes('rsvp')) {
   }
 
   const inputAttendance = document.querySelectorAll("[name='attendance']");
-  inputAttendance.forEach( (button) => button.addEventListener('click', filterAttendance));
-
+  inputAttendance.forEach((button) =>
+    button.addEventListener('click', filterAttendance)
+  );
 
   // Plus - Minus button
   function plusMinusClick() {
-
-    //Get value
+    // Get value
     let value = document.querySelector('.value');
     const guestsContainer2 = document.querySelector('.guests>.container-2');
     const guests = guestsContainer2.parentElement;
 
     switch (true) {
-      case (this.className === "minus"):
+      case this.className === 'minus':
         if (value.innerHTML == 0) {
           break;
-
-        } else if ((value.innerHTML == 1)) {
+        } else if (value.innerHTML == 1) {
           guests.lastElementChild.classList.add('remove');
-          guests.lastElementChild.addEventListener('animationend', function afterHiding() {
-            this.parentElement.lastElementChild.classList.remove('remove');
-            this.parentElement.lastElementChild.classList.add('hidden');
-          }, {once: true});
-          value.innerHTML = (1 * value.innerHTML) - 1;
+          guests.lastElementChild.addEventListener(
+            'animationend',
+            function afterHiding() {
+              this.parentElement.lastElementChild.classList.remove('remove');
+              this.parentElement.lastElementChild.classList.add('hidden');
+            },
+            { once: true }
+          );
+          value.innerHTML = 1 * value.innerHTML - 1;
           break;
-
         } else {
-          guests.lastElementChild.addEventListener('animationend', function afterRemoving() {
-            this.parentElement.lastElementChild.remove();
-          }, {once: true});
+          guests.lastElementChild.addEventListener(
+            'animationend',
+            function afterRemoving() {
+              this.parentElement.lastElementChild.remove();
+            },
+            { once: true }
+          );
           guests.lastElementChild.classList.add('remove');
-          value.innerHTML = (1 * value.innerHTML) - 1;
+          value.innerHTML = 1 * value.innerHTML - 1;
           break;
         }
 
-      case (this.className === "plus"):
-        if (value.innerHTML == 0) {          
+      case this.className === 'plus':
+        if (value.innerHTML == 0) {
           guests.lastElementChild.classList.remove('hidden');
-
         } else {
           guests.append(guests.lastElementChild.cloneNode(true));
-        } 
-        value.innerHTML = (1 * value.innerHTML) + 1;
+        }
+        value.innerHTML = 1 * value.innerHTML + 1;
         break;
     }
-
   }
 
-  const plusMinusButton = document.querySelectorAll("#minus-plus");
-  plusMinusButton.forEach( (button) => button.addEventListener('click', plusMinusClick));
-
-  }
+  const plusMinusButton = document.querySelectorAll('#minus-plus');
+  plusMinusButton.forEach((button) =>
+    button.addEventListener('click', plusMinusClick)
+  );
+}
