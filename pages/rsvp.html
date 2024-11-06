@@ -1,120 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../styles/styles.css">
-  <link rel="shortcut icon" type="image/x-icon" href="">
-  <script src="../scripts/mainscript.js" defer></script>
-  <title>Nathan & Victoria</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="" />
+    <script src="../scripts/mainscript.js" defer></script>
+    <title>Nathan & Victoria</title>
+  </head>
 
-<body>
-  <header>
-    <div class="header">
-      <a class="coupleName" href="../index.html">N + V</a>
-      <div class="dropdown">
-        <a class="title" href="../index.html">HOME</a>
-        <a class="title" href="place.html">PLACE</a>
-        <a class="title" href="registry.html">REGISTRY</a>
-        <a class="title clicked" href="rsvp.html">RSVP</a>
-        <div id="hamburger-menu" class="btn not-active">
-          <span></span>
-          <span></span>
-          <span></span>
+  <body>
+    <header>
+      <div class="header">
+        <a class="coupleName" href="../index.html">N + V</a>
+        <div class="dropdown">
+          <a class="title" href="../index.html">HOME</a>
+          <a class="title" href="place.html">PLACE</a>
+          <a class="title" href="registry.html">REGISTRY</a>
+          <a class="title clicked" href="rsvp.html">RSVP</a>
+          <div id="hamburger-menu" class="btn not-active">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div id="menu-mobile" class="menu-mobile hidden">
+          <div class="main-title">PAGES</div>
+          <a class="title" href="../index.html">HOME</a>
+          <a class="title" href="place.html">PLACE</a>
+          <a class="title" href="registry.html">REGISTRY</a>
+          <a class="title clicked" href="rsvp.html">RSVP</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="rsvp_message">
+        <div class="title">CONFIRM ATTENDANCE</div>
+        <div class="subtitle">
+          BE A PART OF OUR LOVE STORY, CONFIRM YOUR ATTENDANCE.
+        </div>
+        <div class="image">
+          <div class="first">N</div>
+          <div class="second">V</div>
         </div>
       </div>
 
-      <div id="menu-mobile" class="menu-mobile hidden">
-        <div class="main-title">PAGES</div>
-        <a class="title" href="../index.html">HOME</a>
-        <a class="title" href="place.html">PLACE</a>
-        <a class="title" href="registry.html">REGISTRY</a>
-        <a class="title clicked" href="rsvp.html">RSVP</a>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <div class="rsvp_message">
-      <div class="title">CONFIRM ATTENDANCE</div>
-      <div class="subtitle">BE A PART OF OUR LOVE STORY, CONFIRM YOUR ATTENDANCE.</div>
-      <div class="image">
-        <div class="first">N</div>
-        <div class="second">V</div>
-      </div>
-    </div>
-    
-    <div class="rsvp_form">
-      <form class="form">
-        <section class="confirmation">
-          <div class="container-1">
-            <div class="title">Are you going to the event?</div>
-            <div class="wrapper">
-              <div class="radio">
-                <input type="radio" name="attendance" id="radio-yes" value="yes" checked>
-                <label for="radio-yes">Yes</label>
-              </div>
-              <div class="radio">
-                <input type="radio" name="attendance" id="radio-no" value="no">
-                <label for="radio-no">No</label>
+      <div class="rsvp_form">
+        <form class="form">
+          <section class="confirmation">
+            <div class="container-1">
+              <div class="title">Are you going to the event?</div>
+              <div class="wrapper">
+                <div class="radio">
+                  <input
+                    type="radio"
+                    name="attendance"
+                    id="radio-yes"
+                    value="yes"
+                    checked
+                  />
+                  <label for="radio-yes">Yes</label>
+                </div>
+                <div class="radio">
+                  <input
+                    type="radio"
+                    name="attendance"
+                    id="radio-no"
+                    value="no"
+                  />
+                  <label for="radio-no">No</label>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="container-2">
-            <div class="input-wrapper">
-              <label for="input-name">Complete Name<span>*</span></label>
-              <input type="text" name="name" id="input-name" placeholder=" " pattern="^\D+\s?$" required>
-              <div class="error">*Please use only letters and whitespace.</div>
-            </div>
-            
-            <div class="input-wrapper">
-              <label for="input-email">E-mail<span>*</span></label>
-              <input type="email" name="email" id="input-email" placeholder=" " required>
-              <div class="error">*Please follow the example: 'email@email.com'</div>
-            </div>
-            
-            <div class="input-wrapper">
-              <label for="input-phone">Phone Number<span>*</span></label>
-              <input type="tel" name="phone" id="input-phone" placeholder=" " pattern="^\(?\d{3}\)?[\-\s]?\d{3}[\-\s]?\d{4}$" required>
-              <div class="error">*Please use USA/Canada phone pattern.</div>
-            </div>
-          </div>
-        </section>
+            <div class="container-2">
+              <div class="input-wrapper">
+                <label for="input-name">Complete Name<span>*</span></label>
+                <input
+                  type="text"
+                  name="name"
+                  id="input-name"
+                  placeholder=" "
+                  pattern="^\D+\s?$"
+                  required
+                />
+                <div class="error">
+                  *Please use only letters and whitespace.
+                </div>
+              </div>
 
-        <section class="guests">
-          <div class="text">How many guests?</div>
-          <div class="container-1">
-            <div class="text">Guests:</div>
-            <div class="container-buttons">
-              <img id="minus-plus" class="minus" src="../images/minus-circle.svg">
-              <div class="value">0</div>
-              <img id="minus-plus" class="plus" src="../images/plus-circle.svg">
-            </div>
-          </div>
-          
-          <div class="container-2 hidden">
-            <label for="input-guestName">Guest Complete Name</label>
-            <input type="text" name="name" id="input-guestName" placeholder=" ">
-          </div>
-        </section>
-        <button type="submit" id="form-button">SUBMIT</button>
-      </form>
-    </div>
-  </main>
+              <div class="input-wrapper">
+                <label for="input-email">E-mail<span>*</span></label>
+                <input
+                  type="email"
+                  name="email"
+                  id="input-email"
+                  placeholder=" "
+                  required
+                />
+                <div class="error">
+                  *Please follow the example: 'email@email.com'
+                </div>
+              </div>
 
-  <footer>
-    <div class="social">
-      <a href="https://www.facebook.com/sharer/sharer.php?u=https://google.com/" target="_blank" rel="noopener"><img class="facebook" src="../images/brand-facebook.svg"></a>
-      <a href="http://pinterest.com/pin/create/link/?url=https://www.google.com/" target="_blank" rel="noopener"><img class="pinterest" src="../images/brand-pinterest.svg"></a>
-      <a href="http://www.twitter.com/share?url=https://www.google.com/>" target="_blank" rel="noopener"><img class="twitter" src="../images/brand-twitter.svg"></a>
-    </div>
-    <div class="counter">
-      <div><a>439</a> VISITORS HAVE ALREADY CHECKED OUT OUR WEDDING WEBSITE.</div>
-    </div>
-    <a class="personal" href="https://github.com/FelipePulcherio/">FSP</a>
-  </footer>
-</body>
+              <div class="input-wrapper">
+                <label for="input-phone">Phone Number<span>*</span></label>
+                <input
+                  type="tel"
+                  name="phone"
+                  id="input-phone"
+                  placeholder=" "
+                  pattern="^\(?\d{3}\)?[\-\s]?\d{3}[\-\s]?\d{4}$"
+                  required
+                />
+                <div class="error">*Please use USA/Canada phone pattern.</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="guests">
+            <div class="text">How many guests?</div>
+            <div class="container-1">
+              <div class="text">Guests:</div>
+              <div class="container-buttons">
+                <img
+                  id="minus-plus"
+                  class="minus"
+                  src="../images/minus-circle.svg"
+                />
+                <div class="value">0</div>
+                <img
+                  id="minus-plus"
+                  class="plus"
+                  src="../images/plus-circle.svg"
+                />
+              </div>
+            </div>
+
+            <div class="container-2 hidden">
+              <label for="input-guestName">Guest Complete Name</label>
+              <input
+                type="text"
+                name="name"
+                id="input-guestName"
+                placeholder=" "
+              />
+            </div>
+          </section>
+          <button type="submit" id="form-button">SUBMIT</button>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <div class="social">
+        <a
+          href="https://www.facebook.com/sharer/sharer.php?u=https://google.com/"
+          target="_blank"
+          rel="noopener"
+          ><img class="facebook" src="../images/brand-facebook.svg"
+        /></a>
+        <a
+          href="http://pinterest.com/pin/create/link/?url=https://www.google.com/"
+          target="_blank"
+          rel="noopener"
+          ><img class="pinterest" src="../images/brand-pinterest.svg"
+        /></a>
+        <a
+          href="http://www.twitter.com/share?url=https://www.google.com/>"
+          target="_blank"
+          rel="noopener"
+          ><img class="twitter" src="../images/brand-twitter.svg"
+        /></a>
+      </div>
+      <div class="counter">
+        <div>
+          <a>439</a> VISITORS HAVE ALREADY CHECKED OUT OUR WEDDING WEBSITE.
+        </div>
+      </div>
+      <a class="personal" href="https://github.com/FelipePulcherio/">FSP</a>
+    </footer>
+  </body>
 </html>

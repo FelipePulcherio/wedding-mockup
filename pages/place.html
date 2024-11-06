@@ -1,86 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../styles/styles.css">
-  <link rel="shortcut icon" type="image/x-icon" href="">
-  <script src="../scripts/mainscript.js" defer></script>
-  <title>Nathan & Victoria</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="" />
+    <script src="../scripts/mainscript.js" defer></script>
+    <title>Nathan & Victoria</title>
+  </head>
 
-<body>
-  <header>
-    <div class="header">
-      <a class="coupleName" href="../index.html">N + V</a>
-      <div class="dropdown">
-        <a class="title" href="../index.html">HOME</a>
-        <a class="title clicked" href="place.html">PLACE</a>
-        <a class="title" href="registry.html">REGISTRY</a>
-        <a class="title" href="rsvp.html">RSVP</a>
-        <div id="hamburger-menu" class="btn not-active">
-          <span></span>
-          <span></span>
-          <span></span>
+  <body>
+    <header>
+      <div class="header">
+        <a class="coupleName" href="../index.html">N + V</a>
+        <div class="dropdown">
+          <a class="title" href="../index.html">HOME</a>
+          <a class="title clicked" href="place.html">PLACE</a>
+          <a class="title" href="registry.html">REGISTRY</a>
+          <a class="title" href="rsvp.html">RSVP</a>
+          <div id="hamburger-menu" class="btn not-active">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div id="menu-mobile" class="menu-mobile hidden">
+          <div class="main-title">PAGES</div>
+          <a class="title" href="../index.html">HOME</a>
+          <a class="title clicked" href="place.html">PLACE</a>
+          <a class="title" href="registry.html">REGISTRY</a>
+          <a class="title" href="rsvp.html">RSVP</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="place_message">
+        <div class="title">CEREMONY & RECEPTION</div>
+        <div class="subtitle">
+          DON'T MISS OUR BEAUTIFUL AND EMOTIONAL CEREMONY. WE'RE COUNTING ON YOU
+          TO MAKE IT EVEN MORE SPECIAL!
+        </div>
+        <div class="image">
+          <div class="first">N</div>
+          <div class="second">V</div>
         </div>
       </div>
 
-      <div id="menu-mobile" class="menu-mobile hidden">
-        <div class="main-title">PAGES</div>
-        <a class="title" href="../index.html">HOME</a>
-        <a class="title clicked" href="place.html">PLACE</a>
-        <a class="title" href="registry.html">REGISTRY</a>
-        <a class="title" href="rsvp.html">RSVP</a>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <div class="place_message">
-      <div class="title">CEREMONY & RECEPTION</div>
-      <div class="subtitle">DON'T MISS OUR BEAUTIFUL AND EMOTIONAL CEREMONY. WE'RE COUNTING ON YOU TO MAKE IT EVEN MORE SPECIAL!</div>
-      <div class="image">
-        <div class="first">N</div>
-        <div class="second">V</div>
-      </div>
-    </div>
-
-    <div class="place_directions">
-      <div class="first">
-        <img class="place_img" src="../images/queens_park_rose_garden.jpg">
-        <div class="text">
-          <div class="address">QUEEN'S PARK ROSE GARDEN</div>
-          <div class="date">TUESDAY THE 31ST OF OCTOBER, 2023 AT 1:00 PM</div>
+      <div class="place_directions">
+        <div class="first">
+          <img class="place_img" src="../images/queens_park_rose_garden.jpg" />
+          <div class="text">
+            <div class="address">QUEEN'S PARK ROSE GARDEN</div>
+            <div class="date">FRIDAY THE 28TH OF FEBRUARY, 2025 AT 1:00 PM</div>
+          </div>
         </div>
+        <div class="second">
+          <a
+            href="https://www.google.com/maps/place/49%C2%B012'54.7%22N+122%C2%B054'25.0%22W/@49.2151944,-122.9069444,17"
+            target="_blank"
+            rel="noopener"
+            ><img class="gmaps" src="../images/map_location.png"
+          /></a>
+        </div>
+        <form class="third">
+          <div>
+            PLEASE ENTER THE STARTING ADDRESS HERE TO CALCULATE A ROUTE:
+          </div>
+          <section class="route_calc">
+            <label for="route"></label>
+            <input
+              type="text"
+              id="route"
+              name="route"
+              placeholder=" "
+              required="required"
+              pattern=".+"
+            />
+            <div class="error">*Please type something.</div>
+          </section>
+          <div>
+            <button type="button" id="placeButton">PLOT A ROUTE</button>
+          </div>
+        </form>
       </div>
-      <div class="second">
-        <a href="https://www.google.com/maps/place/49%C2%B012'54.7%22N+122%C2%B054'25.0%22W/@49.2151944,-122.9069444,17" target="_blank" rel="noopener"><img class="gmaps" src="../images/map_location.png"></a>
+    </main>
+
+    <footer>
+      <div class="social">
+        <a
+          href="https://www.facebook.com/sharer/sharer.php?u=https://google.com/"
+          target="_blank"
+          rel="noopener"
+          ><img class="facebook" src="../images/brand-facebook.svg"
+        /></a>
+        <a
+          href="http://pinterest.com/pin/create/link/?url=https://www.google.com/"
+          target="_blank"
+          rel="noopener"
+          ><img class="pinterest" src="../images/brand-pinterest.svg"
+        /></a>
+        <a
+          href="http://www.twitter.com/share?url=https://www.google.com/>"
+          target="_blank"
+          rel="noopener"
+          ><img class="twitter" src="../images/brand-twitter.svg"
+        /></a>
       </div>
-      <form class="third">
-        <div>PLEASE ENTER THE STARTING ADDRESS HERE TO CALCULATE A ROUTE:</div>
-        <section class="route_calc">
-          <label for="route"></label>
-          <input type="text" id="route" name="route" placeholder=" " required="required" pattern=".+">
-          <div class="error">*Please type something.</div>
-        </section>
+      <div class="counter">
         <div>
-          <button type="button" id="placeButton">PLOT A ROUTE</button>
+          <a>439</a> VISITORS HAVE ALREADY CHECKED OUT OUR WEDDING WEBSITE.
         </div>
-      </form>
-    </div>
-  </main>
-
-  <footer>
-    <div class="social">
-      <a href="https://www.facebook.com/sharer/sharer.php?u=https://google.com/" target="_blank" rel="noopener"><img class="facebook" src="../images/brand-facebook.svg"></a>
-      <a href="http://pinterest.com/pin/create/link/?url=https://www.google.com/" target="_blank" rel="noopener"><img class="pinterest" src="../images/brand-pinterest.svg"></a>
-      <a href="http://www.twitter.com/share?url=https://www.google.com/>" target="_blank" rel="noopener"><img class="twitter" src="../images/brand-twitter.svg"></a>
-    </div>
-    <div class="counter">
-      <div><a>439</a> VISITORS HAVE ALREADY CHECKED OUT OUR WEDDING WEBSITE.</div>
-    </div>
-    <a class="personal" href="https://github.com/FelipePulcherio/">FSP</a>
-  </footer>
-</body>
+      </div>
+      <a class="personal" href="https://github.com/FelipePulcherio/">FSP</a>
+    </footer>
+  </body>
 </html>
