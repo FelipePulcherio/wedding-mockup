@@ -32,7 +32,7 @@ if (document.URL.includes('index') || !document.URL.includes('.html')) {
   const minutes = document.getElementById('minutes');
   const seconds = document.getElementById('seconds');
 
-  const weddingDate = new Date('2025-02-31T13:00:00.000-07:00');
+  const weddingDate = new Date('2025-02-28T13:00:00.000-07:00');
 
   function updateCountdown() {
     const currentTime = new Date();
