@@ -14,7 +14,7 @@ This project is a wedding page mockup, designed as a personal learning exercise 
 
 ### User Instructions
 
-You can view the live project [here](#)
+You can view the live project [here](https://felipepulcherio.github.io/wedding-mockup/)
 
 To replicate the project locally:
 
